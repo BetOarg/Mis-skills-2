@@ -27,4 +27,9 @@
 - **Patrón:** descripciones que solo resumen la skill, sin indicar cuándo usarla ni qué skill vecina cubre el caso, hacen que skills solapadas compitan o no se activen.
 - **Regla preventiva:** toda descripción dice qué hace, `Use when` con frases reales del usuario (ES/EN) y `Not for` con la skill vecina; máximo 1024 caracteres y sin dos puntos seguidos de espacio en YAML sin comillas.
 - **Verificación:** `python scripts/validate_repo.py` comprueba formato; la activación real se prueba con prompts que deben y que no deben activar la skill, y queda PENDIENTE hasta tener evidencia.
-\n\n## 2026-10-29 — Contar recurrencias entre conversaciones, no solo menciones\n- **Patrón:** varias repeticiones dentro de un mismo chat pueden confundirse con recurrencia transversal.\n- **Regla preventiva:** registrar por separado menciones, conversaciones distintas y días distintos; el umbral de más de tres se aplica a conversaciones distintas.\n- **Verificación:** comprobar el identificador/fecha de cada conversación antes de declarar un patrón recurrente.\n
+
+
+## 2026-10-29 — Contar recurrencias entre conversaciones, no solo menciones
+- **Patrón:** varias repeticiones dentro de un mismo chat pueden confundirse con recurrencia transversal.
+- **Regla preventiva:** registrar por separado menciones, conversaciones distintas y días distintos; el umbral de más de tres se aplica a conversaciones distintas.
+- **Verificación:** comprobar el identificador/fecha de cada conversación antes de declarar un patrón recurrente.
