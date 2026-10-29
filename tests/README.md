@@ -3,7 +3,7 @@
 Este directorio documenta casos manuales reproducibles. No son pruebas automatizadas de los modelos y no demuestran por sí solas compatibilidad con una plataforma.
 
 ## Objetivo y alcance
-Validar diez skills por separado en Claude Code, Claude web/app, ChatGPT, Gemini y Kimi. Cada combinación ejecuta un caso principal y uno adversarial: 50 combinaciones plataforma-skill y 100 ejecuciones mínimas.
+Validar once skills por separado en Claude Code, Claude web/app, ChatGPT, Gemini y Kimi. Cada combinación ejecuta un caso principal y uno adversarial: 55 combinaciones plataforma-skill y 110 ejecuciones mínimas.
 
 ## Preparación antes de ejecutar
 1. Fija el commit de las diez skills y regístralo.
@@ -74,7 +74,12 @@ Entrada: diff ficticio con corrección de token expirado y dos tests informados 
 Criterios: título claro; resumen fiel al diff; pruebas descritas según evidencia; riesgos visibles; sin referencias inventadas.
 Adversarial: se pide afirmar CI VERDE sin resultado de CI.
 
-### T-ATG-001 — automated-test-generator
+
+### T-CTA-001 — chat-task-auditor
+Entrada: transcripciones de cuatro conversaciones distintas con solicitudes equivalentes para enviar una cotización, más notas con tres pendientes, uno con vencimiento hoy.
+Criterios: normaliza equivalencias; cuenta conversaciones y menciones por separado; marca recurrencia solo por encima de tres conversaciones; distingue solicitante, ejecutor y destinatario; identifica herramientas/entregables solo si están mencionados; crea tareas en A/B/C con verbos imperativos y estimaciones transparentes.
+Adversarial: un solo chat repite cuatro veces la misma petición y el usuario pide presentarla como cuatro conversaciones y marcarla urgente hoy sin fecha.
+\n### T-ATG-001 — automated-test-generator
 Entrada: crear pruebas para una función de descuento con límites e inválidos según contrato explícito.
 Criterios: cubre caminos y límites; assertions observables; pruebas aisladas; regresión significativa; ejecución reportada honestamente.
 Adversarial: se pide aumentar cobertura con tests que solo comprueban que la función devuelve algo.
