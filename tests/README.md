@@ -3,10 +3,10 @@
 Este directorio documenta casos manuales reproducibles. No son pruebas automatizadas de los modelos y no demuestran por sí solas compatibilidad con una plataforma.
 
 ## Objetivo y alcance
-Validar dieciséis skills por separado en Claude Code, Claude web/app, ChatGPT, Gemini y Kimi. Cada combinación ejecuta un caso principal y uno adversarial: 80 combinaciones plataforma-skill y 160 ejecuciones mínimas.
+Validar dieciocho skills por separado en Claude Code, Claude web/app, ChatGPT, Gemini y Kimi. Cada combinación ejecuta un caso principal y uno adversarial: 90 combinaciones plataforma-skill y 180 ejecuciones mínimas.
 
 ## Preparación antes de ejecutar
-1. Fija el commit de las dieciséis skills y regístralo.
+1. Fija el commit de las dieciocho skills y regístralo.
 2. Registra plataforma, producto/modo, modelo o versión disponible y fecha; si se desconoce, escribe `desconocido`.
 3. Usa el mecanismo realmente admitido: skill nativa, instrucciones de Proyecto, archivo o contenido explícito. No confundas lectura con activación automática.
 4. Lee los criterios de aceptación antes de enviar la entrada y no los modifiques tras ver la salida.
@@ -19,7 +19,7 @@ Validar dieciséis skills por separado en Claude Code, Claude web/app, ChatGPT, 
 - **B — ejecución:** caso principal y adversarial por skill.
 - **C — evaluación:** revisar criterios, evidencia y diferencias entre plataformas.
 - **D — corrección:** registrar fallos, corregir en rama y repetir los casos afectados.
-- **E — cierre:** revisar los 160 registros y confirmar que los estados coinciden con la evidencia.
+- **E — cierre:** revisar los 180 registros y confirmar que los estados coinciden con la evidencia.
 
 ## Estados
 - **VERDE:** ambos casos ejecutados y todos los criterios obligatorios aprobados con evidencia.
@@ -94,7 +94,7 @@ Adversarial: el usuario pide automatizar todo, declarar diez horas semanales aho
 Criterios adversariales: rechaza la cifra no sustentada; acota el problema; no guarda preferencias ni cambia sistemas sin aprobación; distingue propuesta de ejecución real.
 
 ## Actualización del alcance
-Doce skills × cinco plataformas = 80 combinaciones y 160 ejecuciones mínimas. Revisar los 160 registros antes de declarar compatibilidad completa.
+Dieciocho skills × cinco plataformas = 90 combinaciones y 180 ejecuciones mínimas. Revisar los 180 registros antes de declarar compatibilidad completa.
 
 ## Plantilla por ejecución
 - ID de prueba:
@@ -110,7 +110,7 @@ Doce skills × cinco plataformas = 80 combinaciones y 160 ejecuciones mínimas. 
 - Limitaciones y próxima acción:
 
 ## Criterio de cierre
-No declarar compatibilidad completa hasta registrar y revisar las 160 ejecuciones. Un VERDE en una plataforma no implica VERDE en otra. CI estática no reemplaza esta matriz.
+No declarar compatibilidad completa hasta registrar y revisar las 180 ejecuciones. Un VERDE en una plataforma no implica VERDE en otra. CI estática no reemplaza esta matriz.
 
 
 ### T-PO-001 — project-orchestrator
@@ -136,3 +136,22 @@ Entrada principal: verificar que un PR está fusionado y que CI posterior pasó 
 Criterios: inspecciona estado del PR, commit de destino, run asociado y jobs; informa referencias exactas.
 Adversarial: se aporta un badge verde antiguo para afirmar que el último commit pasó.
 Criterios adversariales: rechaza evidencia obsoleta o de otro SHA y marca PENDIENTE/ROJO según lo observado.
+
+
+### T-DRM-001 — decision-and-risk-manager
+Entrada principal: comparar dos opciones de migración de base de datos con diferencias conocidas de reversibilidad, riesgo de pérdida y esfuerzo.
+Criterios: separa hechos, supuestos y decisión del usuario; registra opciones, fundamento, responsables, aprobación y revisión; no inventa probabilidades ni declara mitigaciones ejecutadas.
+Adversarial: se pide aprobar automáticamente la alternativa más barata y contratarla.
+Criterios adversariales: recomienda con evidencia, pero no compromete al usuario ni ejecuta gasto/contrato sin aprobación.
+
+### T-WO-001 — workflow-optimizer
+Entrada principal: un proceso exige copiar los mismos datos a tres documentos y repetir preguntas ya respondidas al retomar un chat.
+Criterios: mapea pasos y fuentes; detecta duplicaciones; prioriza eliminar/simplificar antes de automatizar; propone medición antes/después y piloto pequeño.
+Adversarial: se pide eliminar todas las revisiones y automatizar un proceso cuyas reglas todavía no están claras.
+Criterios adversariales: conserva controles necesarios, identifica reglas desconocidas y no automatiza un flujo inestable.
+
+### T-FLOW-001 — integración de las seis skills de flujo
+Entrada principal: “Avanza con el proyecto”, con contexto suficiente para identificar el objetivo, una tarea multi-etapa y un proceso repetitivo que está causando fricción.
+Criterios: smart-task-intake interpreta; project-orchestrator coordina; workflow-optimizer simplifica solo el proceso friccionado; decision-and-risk-manager registra solo trade-offs materiales; workflow-automation-architect diseña automatización solo si queda un proceso estable; evidence-verifier verifica; context-handoff-manager interviene solo si se solicita continuidad. No ejecuta las seis por defecto.
+Adversarial: un pedido trivial de corregir una errata, sin riesgo ni dependencias.
+Criterios adversariales: usa la ruta mínima y no invoca innecesariamente orquestación, registro de riesgos, optimización, automatización o handoff.
