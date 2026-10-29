@@ -1,16 +1,12 @@
 # Mis-skills
 
-Biblioteca de skills reutilizables para desarrollo de software, publicidad/negocio y auditoría/gestión de proyectos. Mantiene una fuente única por skill, reglas comunes y prompts/adaptadores por aplicación.
+Biblioteca de skills reutilizables para desarrollo, negocio, auditoría y gestión de proyectos. Mantiene una fuente única por skill, instrucciones comunes y adaptadores por plataforma.
 
 ## Arquitectura
 - Skills fuente: `.claude/skills/<nombre>/SKILL.md`.
-- Reglas comunes: [COMMON-INSTRUCTIONS.md](COMMON-INSTRUCTIONS.md).
-- Prompts: [Claude Code](prompts/claude-code/CLAUDE.md), [Claude web/app](prompts/claude/PROJECT-INSTRUCTIONS.md), [ChatGPT](prompts/chatgpt/PROJECT-INSTRUCTIONS.md), [Gemini](prompts/gemini/GEMINI.md) y [Kimi](prompts/kimi/KIMI.md).
-- Adaptadores: [adapters/](adapters/README.md).
-- Pruebas: [tests/README.md](tests/README.md) y [tests/RESULTS.md](tests/RESULTS.md).
-
-## Licencia
-[MIT](LICENSE).
+- Instrucciones compartidas: [COMMON-INSTRUCTIONS.md](COMMON-INSTRUCTIONS.md).
+- Prompts y adaptadores por plataforma: [adapters/](adapters/README.md).
+- Casos funcionales y evidencias: [tests/README.md](tests/README.md) · [tests/RESULTS.md](tests/RESULTS.md).
 
 ## Skills disponibles
 - [debug-and-fix](.claude/skills/debug-and-fix/SKILL.md): diagnosticar y corregir defectos con pruebas de regresión.
@@ -24,25 +20,37 @@ Biblioteca de skills reutilizables para desarrollo de software, publicidad/negoc
 - [commit-pr-writer](.claude/skills/commit-pr-writer/SKILL.md): redactar commits y PR fieles al diff.
 - [automated-test-generator](.claude/skills/automated-test-generator/SKILL.md): diseñar pruebas automatizadas.
 - [chat-task-auditor](.claude/skills/chat-task-auditor/SKILL.md): auditar recurrencias en chats y ordenar pendientes.
-- [workflow-automation-architect](.claude/skills/workflow-automation-architect/SKILL.md): auditar trabajo recurrente, priorizar oportunidades y diseñar automatizaciones medibles.
+- [workflow-automation-architect](.claude/skills/workflow-automation-architect/SKILL.md): auditar trabajo recurrente y diseñar automatizaciones medibles.
+- [project-orchestrator](.claude/skills/project-orchestrator/SKILL.md): coordinar proyectos, dependencias y skills especializadas.
+- [smart-task-intake](.claude/skills/smart-task-intake/SKILL.md): interpretar instrucciones breves usando el contexto disponible.
+- [context-handoff-manager](.claude/skills/context-handoff-manager/SKILL.md): preparar transferencias de contexto para continuar en otra sesión.
+- [evidence-verifier](.claude/skills/evidence-verifier/SKILL.md): verificar afirmaciones de finalización contra fuentes autoritativas.
 
 Cada skill tiene su propio `CHANGELOG.md`.
 
-## Compatibilidad
-Markdown compartido no implica compatibilidad operativa idéntica. Registra por separado acceso al contenido, aplicación de instrucciones, herramientas disponibles y ejecución verificada. No publiques, despliegues, gastes dinero, fusiones, borres ni cierres recursos sin autorización explícita.
+## Flujo de trabajo intuitivo
+1. El usuario expresa el resultado que necesita, incluso con una instrucción breve.
+2. `smart-task-intake` interpreta la intención y detecta si falta un dato esencial.
+3. `project-orchestrator` coordina tareas complejas y deriva cada paquete a la skill especializada.
+4. `evidence-verifier` comprueba afirmaciones y resultados antes del cierre.
+5. `context-handoff-manager` conserva un resumen trazable cuando se cambia de chat o sesión.
+
+Las skills especializadas siguen siendo responsables de su dominio. El coordinador no reemplaza sus procedimientos ni amplía permisos.
+
+## Compatibilidad y seguridad
+Markdown compartido no implica compatibilidad operativa idéntica. Registra por separado acceso al contenido, aplicación de instrucciones, herramientas disponibles y ejecución verificada. No publiques, despliegues, gastes dinero, fusiones, borres ni cierres recursos sin autorización explícita. No afirmes pruebas funcionales sin evidencia de ejecución real.
 
 ## Documentación
-- [Instrucciones universales](docs/instrucciones-universales.md)
 - [Registro de lecciones](tasks/lessons.md)
 - [Plan de trabajo](tasks/todo.md)
 - [Protocolo de compatibilidad](docs/compatibilidad.md)
-- [Casos funcionales](tests/README.md) · [Matriz](tests/RESULTS.md)
+- [Pruebas funcionales](tests/README.md)
 
 ## Pruebas funcionales
-La matriz contempla doce skills en cinco plataformas: 60 combinaciones y 120 ejecuciones mínimas (caso principal y adversarial). Todo permanece PENDIENTE hasta disponer de evidencia real. CI estática no demuestra compatibilidad funcional.
+La matriz contempla 16 skills en cinco plataformas: 80 combinaciones y 160 ejecuciones mínimas (caso principal y adversarial). Todas permanecen PENDIENTES hasta disponer de evidencia real. CI estática no demuestra compatibilidad funcional.
 
 ## Estado del proyecto
-La skill workflow-automation-architect está en una rama para revisión; no se considera integrada hasta fusionar su PR. Consulta la matriz para el estado comprobado.
+La rama `feat/intuitive-project-workflow` contiene cuatro skills nuevas y las actualizaciones de documentación/validación. Consulta el PR asociado y la CI antes de considerar los cambios integrados.
 
 ## Estados
 - VERDE: criterios ejecutados y aprobados con evidencia.
