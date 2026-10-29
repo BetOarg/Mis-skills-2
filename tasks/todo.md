@@ -23,8 +23,13 @@ Mantener una fuente única por skill y separar los prompts/adaptadores por aplic
 ## Limpieza del repositorio
 - [ ] Revisar la protección de `main`: la API de ramas informa `protected: false`; no hay una operación disponible en esta conexión para cambiar la protección.
 
-## Nueva skill incorporada en esta rama\n- [x] Crear `chat-task-auditor` con auditoría de recurrencia de chats y limpieza A/B/C de pendientes.\n- [x] Añadir changelog, README, casos principal/adversarial y ampliar matriz a 11 skills.\n- [ ] Validar la nueva skill con CI y revisar el PR antes de integrar.\n\n## Pruebas funcionales pendientes
-- [ ] Completar 100 ejecuciones reales: diez skills × cinco plataformas × caso principal y adversarial.
+## Nueva skill incorporada en esta rama
+- [x] Crear `chat-task-auditor` con auditoría de recurrencia de chats y limpieza A/B/C de pendientes.
+- [x] Añadir changelog, README, casos principal/adversarial y ampliar matriz a 11 skills.
+- [ ] Validar la nueva skill con CI y revisar el PR antes de integrar.
+
+## Pruebas funcionales pendientes
+- [ ] Completar 110 ejecuciones reales: once skills × cinco plataformas × caso principal y adversarial.
 - [ ] Registrar versión/modo, método de carga, entrada exacta, salida observada y evidencia.
 - [ ] Marcar una prueba VERDE solo cuando todos sus criterios obligatorios pasen.
 - [ ] No afirmar compatibilidad multiplataforma completa antes de revisar las 100 ejecuciones.
