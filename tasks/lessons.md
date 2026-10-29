@@ -40,3 +40,10 @@
 - **Regla preventiva:** usar smart-task-intake para interpretar, project-orchestrator para coordinar, skills especializadas para ejecutar y evidence-verifier para comprobar.
 - **Verificación:** comprobar que cada responsabilidad tenga activadores y exclusiones propios y que el orquestador no duplique el procedimiento especializado.
 - **Estado:** arquitectura propuesta en rama; validación CI pendiente.
+
+
+## 2026-10-29 — Integrar skills de flujo sin convertirlas en una cadena obligatoria
+- **Patrón:** agregar coordinadores, optimizadores, gestores de riesgo y verificadores puede aumentar la fricción si se ejecutan todos en cada pedido.
+- **Regla preventiva:** definir una ruta mínima (intake → coordinación solo si hace falta → especialista → verificación) y disparadores explícitos para optimización, automatización, registro de decisiones y handoff.
+- **Verificación:** incluir un caso multi-skill y un caso trivial adversarial que debe tomar la ruta corta.
+- **Estado:** reglas y casos añadidos en rama; CI pendiente.
