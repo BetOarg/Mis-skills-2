@@ -12,7 +12,7 @@ EXPECTED_SKILLS = {
     "debug-and-fix", "audit-ci-release", "github-project-operations",
     "ads-campaign-builder", "business-strategy-documents", "senior-code-refactor",
     "agent-skill-generator", "technical-documentation-writer", "commit-pr-writer",
-    "automated-test-generator",
+    "automated-test-generator", "chat-task-auditor",
 }
 REQUIRED_FILES = [
     "README.md", "COMMON-INSTRUCTIONS.md", "LICENSE",
@@ -204,7 +204,7 @@ def main() -> int:
             print(f"- {error}")
         return 1
     print(
-        "VALIDACIÓN VERDE: archivos requeridos presentes; diez skills, frontmatter "
+        "VALIDACIÓN VERDE: archivos requeridos presentes; once skills, frontmatter "
         "y calidad de skills válidos; changelogs, prompts, adaptadores y enlaces Markdown internos comprobados."
     )
     print(f"Archivos Markdown inspeccionados: {len(markdown_files)}")
