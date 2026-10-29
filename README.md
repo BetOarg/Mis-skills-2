@@ -25,7 +25,8 @@ El repositorio se distribuye bajo la [licencia MIT](LICENSE). Consulta el archiv
 - [agent-skill-generator](.claude/skills/agent-skill-generator/SKILL.md): diseñar y validar skills reutilizables.
 - [technical-documentation-writer](.claude/skills/technical-documentation-writer/SKILL.md): crear y auditar documentación técnica reproducible.
 - [commit-pr-writer](.claude/skills/commit-pr-writer/SKILL.md): redactar commits, PR y notas de versión fieles al diff.
-- [automated-test-generator](.claude/skills/automated-test-generator/SKILL.md): diseñar pruebas unitarias, de integración y regresión.\n- [chat-task-auditor](.claude/skills/chat-task-auditor/SKILL.md): auditar recurrencias en chats y ordenar pendientes en bloques A/B/C.
+- [automated-test-generator](.claude/skills/automated-test-generator/SKILL.md): diseñar pruebas unitarias, de integración y regresión.
+- [chat-task-auditor](.claude/skills/chat-task-auditor/SKILL.md): auditar recurrencias en chats y ordenar pendientes en bloques A/B/C.
 
 Cada skill tiene su propio `CHANGELOG.md`.
 
