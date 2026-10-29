@@ -1,6 +1,6 @@
 ---
 name: automated-test-generator
-description: Design, write, or improve unit, integration, and regression tests for existing software, including boundary cases, error paths, and test-quality checks.
+description: Design, write, or improve unit, integration, and regression tests for existing software. Use when adding test coverage, testing boundaries or error paths, or building regression tests; not for diagnosing and fixing the underlying defect (use debug-and-fix).
 ---
 
 # Automated Test Generator
