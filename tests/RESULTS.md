@@ -3,7 +3,7 @@
 Este archivo registra ejecuciones reales. No marcar un caso VERDE sin evidencia observable.
 
 ## Alcance
-Dieciséis skills × cinco plataformas = 80 combinaciones y 160 ejecuciones mínimas (caso principal y adversarial). La matriz permanece PENDIENTE hasta ejecutar y documentar los casos.
+Dieciocho skills × cinco plataformas = 90 combinaciones y 180 ejecuciones mínimas (caso principal y adversarial). La matriz permanece PENDIENTE hasta ejecutar y documentar los casos.
 
 ## Reglas
 1. Registrar producto/modo, versión y SHA o referencia exacta de la skill.
@@ -33,6 +33,8 @@ Dieciséis skills × cinco plataformas = 80 combinaciones y 160 ejecuciones mín
 | Claude Code | smart-task-intake | PENDIENTE | PENDIENTE | PENDIENTE |
 | Claude Code | context-handoff-manager | PENDIENTE | PENDIENTE | PENDIENTE |
 | Claude Code | evidence-verifier | PENDIENTE | PENDIENTE | PENDIENTE |
+| Claude Code | decision-and-risk-manager | PENDIENTE | PENDIENTE | PENDIENTE |
+| Claude Code | workflow-optimizer | PENDIENTE | PENDIENTE | PENDIENTE |
 | Claude web/app | debug-and-fix | PENDIENTE | PENDIENTE | PENDIENTE |
 | Claude web/app | audit-ci-release | PENDIENTE | PENDIENTE | PENDIENTE |
 | Claude web/app | github-project-operations | PENDIENTE | PENDIENTE | PENDIENTE |
@@ -49,6 +51,8 @@ Dieciséis skills × cinco plataformas = 80 combinaciones y 160 ejecuciones mín
 | Claude web/app | smart-task-intake | PENDIENTE | PENDIENTE | PENDIENTE |
 | Claude web/app | context-handoff-manager | PENDIENTE | PENDIENTE | PENDIENTE |
 | Claude web/app | evidence-verifier | PENDIENTE | PENDIENTE | PENDIENTE |
+| Claude web/app | decision-and-risk-manager | PENDIENTE | PENDIENTE | PENDIENTE |
+| Claude web/app | workflow-optimizer | PENDIENTE | PENDIENTE | PENDIENTE |
 | ChatGPT / Proyecto | debug-and-fix | PENDIENTE | PENDIENTE | PENDIENTE |
 | ChatGPT / Proyecto | audit-ci-release | PENDIENTE | PENDIENTE | PENDIENTE |
 | ChatGPT / Proyecto | github-project-operations | PENDIENTE | PENDIENTE | PENDIENTE |
@@ -65,6 +69,8 @@ Dieciséis skills × cinco plataformas = 80 combinaciones y 160 ejecuciones mín
 | ChatGPT / Proyecto | smart-task-intake | PENDIENTE | PENDIENTE | PENDIENTE |
 | ChatGPT / Proyecto | context-handoff-manager | PENDIENTE | PENDIENTE | PENDIENTE |
 | ChatGPT / Proyecto | evidence-verifier | PENDIENTE | PENDIENTE | PENDIENTE |
+| ChatGPT / Proyecto | decision-and-risk-manager | PENDIENTE | PENDIENTE | PENDIENTE |
+| ChatGPT / Proyecto | workflow-optimizer | PENDIENTE | PENDIENTE | PENDIENTE |
 | Gemini | debug-and-fix | PENDIENTE | PENDIENTE | PENDIENTE |
 | Gemini | audit-ci-release | PENDIENTE | PENDIENTE | PENDIENTE |
 | Gemini | github-project-operations | PENDIENTE | PENDIENTE | PENDIENTE |
@@ -81,6 +87,8 @@ Dieciséis skills × cinco plataformas = 80 combinaciones y 160 ejecuciones mín
 | Gemini | smart-task-intake | PENDIENTE | PENDIENTE | PENDIENTE |
 | Gemini | context-handoff-manager | PENDIENTE | PENDIENTE | PENDIENTE |
 | Gemini | evidence-verifier | PENDIENTE | PENDIENTE | PENDIENTE |
+| Gemini | decision-and-risk-manager | PENDIENTE | PENDIENTE | PENDIENTE |
+| Gemini | workflow-optimizer | PENDIENTE | PENDIENTE | PENDIENTE |
 | Kimi | debug-and-fix | PENDIENTE | PENDIENTE | PENDIENTE |
 | Kimi | audit-ci-release | PENDIENTE | PENDIENTE | PENDIENTE |
 | Kimi | github-project-operations | PENDIENTE | PENDIENTE | PENDIENTE |
@@ -97,6 +105,8 @@ Dieciséis skills × cinco plataformas = 80 combinaciones y 160 ejecuciones mín
 | Kimi | smart-task-intake | PENDIENTE | PENDIENTE | PENDIENTE |
 | Kimi | context-handoff-manager | PENDIENTE | PENDIENTE | PENDIENTE |
 | Kimi | evidence-verifier | PENDIENTE | PENDIENTE | PENDIENTE |
+| Kimi | decision-and-risk-manager | PENDIENTE | PENDIENTE | PENDIENTE |
+| Kimi | workflow-optimizer | PENDIENTE | PENDIENTE | PENDIENTE |
 
 ## Ficha por ejecución
 - ID de prueba:
@@ -115,4 +125,4 @@ Dieciséis skills × cinco plataformas = 80 combinaciones y 160 ejecuciones mín
 - Fallos y próxima acción:
 
 ## Criterio de cierre
-No declarar compatibilidad funcional completa hasta registrar y revisar las 160 ejecuciones. Un VERDE en una plataforma no implica VERDE en otra. CI estática no reemplaza esta matriz.
+No declarar compatibilidad funcional completa hasta registrar y revisar las 180 ejecuciones. Un VERDE en una plataforma no implica VERDE en otra. CI estática no reemplaza esta matriz.
