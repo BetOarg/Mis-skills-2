@@ -39,3 +39,15 @@ Mantener una fuente única por skill y separar los prompts/adaptadores por aplic
 - ROJO: falló un control obligatorio.
 - PENDIENTE: no ejecutado o evidencia incompleta.
 - BLOQUEADO: falta acceso, herramienta, información o autorización.
+
+
+## Nueva skill propuesta: workflow-automation-architect
+- [x] Crear skill v1.0.0 y changelog en la rama `feat/workflow-automation-architect`.
+- [x] Añadir caso principal/adversarial y ampliar matriz a doce skills.
+- [x] Actualizar README y validador para doce skills.
+- [ ] Ejecutar CI de rama, revisar diff y abrir PR.
+- [ ] Fusionar tras revisión y CI verde.
+- [ ] Verificar CI posterior a la fusión.
+
+## Pruebas funcionales
+- [ ] 120 ejecuciones reales: doce skills × cinco plataformas × dos casos. Permanecen PENDIENTES sin evidencia.
