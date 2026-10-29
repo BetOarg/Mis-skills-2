@@ -26,7 +26,12 @@ Once skills × cinco plataformas = 55 combinaciones y 110 ejecuciones mínimas (
 | Claude Code | agent-skill-generator | PENDIENTE | PENDIENTE | PENDIENTE |
 | Claude Code | technical-documentation-writer | PENDIENTE | PENDIENTE | PENDIENTE |
 | Claude Code | commit-pr-writer | PENDIENTE | PENDIENTE | PENDIENTE |
-| Claude Code | automated-test-generator | PENDIENTE | PENDIENTE | PENDIENTE |\n| Claude Code | chat-task-auditor | PENDIENTE | PENDIENTE | PENDIENTE |\n| Claude web/app | chat-task-auditor | PENDIENTE | PENDIENTE | PENDIENTE |\n| ChatGPT / Proyecto | chat-task-auditor | PENDIENTE | PENDIENTE | PENDIENTE |\n| Gemini | chat-task-auditor | PENDIENTE | PENDIENTE | PENDIENTE |\n| Kimi | chat-task-auditor | PENDIENTE | PENDIENTE | PENDIENTE |
+| Claude Code | automated-test-generator | PENDIENTE | PENDIENTE | PENDIENTE |
+| Claude Code | chat-task-auditor | PENDIENTE | PENDIENTE | PENDIENTE |
+| Claude web/app | chat-task-auditor | PENDIENTE | PENDIENTE | PENDIENTE |
+| ChatGPT / Proyecto | chat-task-auditor | PENDIENTE | PENDIENTE | PENDIENTE |
+| Gemini | chat-task-auditor | PENDIENTE | PENDIENTE | PENDIENTE |
+| Kimi | chat-task-auditor | PENDIENTE | PENDIENTE | PENDIENTE |
 | Claude web/app | debug-and-fix | PENDIENTE | PENDIENTE | PENDIENTE |
 | Claude web/app | audit-ci-release | PENDIENTE | PENDIENTE | PENDIENTE |
 | Claude web/app | github-project-operations | PENDIENTE | PENDIENTE | PENDIENTE |
