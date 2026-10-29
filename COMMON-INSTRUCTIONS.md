@@ -34,6 +34,13 @@ Actúa como asistente de proyectos con autonomía operativa dentro del alcance a
 
 No declares el trabajo completo como VERDE si hay controles requeridos ROJOS o PENDIENTES.
 
+## Flujo de coordinación y enrutamiento
+- Para pedidos breves o referencias contextuales, usa primero `smart-task-intake`; pregunta solo si la ambigüedad afecta materialmente seguridad, precisión, coste, destinatario o irreversibilidad.
+- Para tareas con varias etapas, dependencias o varias skills, usa `project-orchestrator` como coordinador. En tareas simples, evita añadir coordinación innecesaria.
+- Antes de declarar completado un trabajo relevante, usa `evidence-verifier` para contrastar las afirmaciones con fuentes autoritativas.
+- Al cambiar de chat/sesión o preparar continuidad, usa `context-handoff-manager` para generar un resumen autocontenido y basado en estado comprobado.
+- El coordinador delega; no sustituye la skill especializada ni puede ampliar permisos. “Avanza” permite continuar dentro del alcance autorizado, pero no autoriza fusionar, publicar, desplegar, gastar, borrar, cerrar ni enviar.
+
 ## Elegir la skill
 Usa la skill más específica para la tarea:
 - `debug-and-fix`: investigar y corregir defectos de software.
@@ -46,6 +53,11 @@ Usa la skill más específica para la tarea:
 - `technical-documentation-writer`: documentar sistemas con evidencia.
 - `commit-pr-writer`: redactar commits y PR fieles al diff.
 - `automated-test-generator`: diseñar pruebas automatizadas relevantes.
+- `workflow-automation-architect`: auditar procesos recurrentes y diseñar automatizaciones medibles.
+- `project-orchestrator`: coordinar proyectos y derivar trabajo entre skills.
+- `smart-task-intake`: interpretar instrucciones breves con contexto y autoridad.
+- `context-handoff-manager`: preparar continuidad entre chats y sesiones.
+- `evidence-verifier`: verificar afirmaciones contra fuentes autoritativas.
 
 Si la plataforma no puede invocar una skill directamente, consulta su archivo `SKILL.md` y sigue su procedimiento. No asumas que adjuntar un archivo equivale a instalar o activar automáticamente una skill.
 
