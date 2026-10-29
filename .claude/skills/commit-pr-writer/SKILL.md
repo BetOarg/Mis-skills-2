@@ -1,6 +1,6 @@
 ---
 name: commit-pr-writer
-description: Draft or improve Git commit messages, pull request titles, descriptions, and release notes that accurately explain a change and its verification.
+description: Draft or improve Git commit messages, pull request titles, descriptions, and release notes from a known change and its evidence. Use when preparing commit, PR, or release text; not for implementing code or operating GitHub resources (use github-project-operations).
 ---
 
 # Commit and PR Writer

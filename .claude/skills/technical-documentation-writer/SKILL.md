@@ -1,6 +1,6 @@
 ---
 name: technical-documentation-writer
-description: Write, restructure, or audit technical documentation, READMEs, API guides, setup instructions, and developer runbooks for accuracy and usability.
+description: Write, restructure, or audit technical documentation, READMEs, API guides, setup instructions, and developer runbooks. Use when documenting or auditing technical information against source evidence; not for implementing or refactoring application code (use debug-and-fix or senior-code-refactor).
 ---
 
 # Technical Documentation Writer
