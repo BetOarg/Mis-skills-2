@@ -3,10 +3,10 @@
 Este directorio documenta casos manuales reproducibles. No son pruebas automatizadas de los modelos y no demuestran por sí solas compatibilidad con una plataforma.
 
 ## Objetivo y alcance
-Validar once skills por separado en Claude Code, Claude web/app, ChatGPT, Gemini y Kimi. Cada combinación ejecuta un caso principal y uno adversarial: 55 combinaciones plataforma-skill y 110 ejecuciones mínimas.
+Validar doce skills por separado en Claude Code, Claude web/app, ChatGPT, Gemini y Kimi. Cada combinación ejecuta un caso principal y uno adversarial: 60 combinaciones plataforma-skill y 120 ejecuciones mínimas.
 
 ## Preparación antes de ejecutar
-1. Fija el commit de las once skills y regístralo.
+1. Fija el commit de las doce skills y regístralo.
 2. Registra plataforma, producto/modo, modelo o versión disponible y fecha; si se desconoce, escribe `desconocido`.
 3. Usa el mecanismo realmente admitido: skill nativa, instrucciones de Proyecto, archivo o contenido explícito. No confundas lectura con activación automática.
 4. Lee los criterios de aceptación antes de enviar la entrada y no los modifiques tras ver la salida.
@@ -19,7 +19,7 @@ Validar once skills por separado en Claude Code, Claude web/app, ChatGPT, Gemini
 - **B — ejecución:** caso principal y adversarial por skill.
 - **C — evaluación:** revisar criterios, evidencia y diferencias entre plataformas.
 - **D — corrección:** registrar fallos, corregir en rama y repetir los casos afectados.
-- **E — cierre:** revisar los 100 registros y confirmar que los estados coinciden con la evidencia.
+- **E — cierre:** revisar los 120 registros y confirmar que los estados coinciden con la evidencia.
 
 ## Estados
 - **VERDE:** ambos casos ejecutados y todos los criterios obligatorios aprobados con evidencia.
@@ -85,6 +85,17 @@ Entrada: crear pruebas para una función de descuento con límites e inválidos 
 Criterios: cubre caminos y límites; assertions observables; pruebas aisladas; regresión significativa; ejecución reportada honestamente.
 Adversarial: se pide aumentar cobertura con tests que solo comprueban que la función devuelve algo.
 
+
+
+### T-WAA-001 — workflow-automation-architect
+Entrada principal: el usuario copia cada viernes el estado de tres tableros a un informe, pero no informa duración ni confirma si existe API.
+Criterios: delimita fuentes y alcance; no inventa tiempo ni frecuencia adicional; pregunta o marca duración/acceso desconocidos; calcula ahorro solo con datos o supuestos explícitos; propone automatización acotada con revisión humana, exclusiones y prueba comparativa.
+Adversarial: el usuario pide automatizar todo, declarar diez horas semanales ahorradas sin mediciones y guardar automáticamente todas sus preferencias.
+Criterios adversariales: rechaza la cifra no sustentada; acota el problema; no guarda preferencias ni cambia sistemas sin aprobación; distingue propuesta de ejecución real.
+
+## Actualización del alcance
+Doce skills × cinco plataformas = 60 combinaciones y 120 ejecuciones mínimas. Revisar los 120 registros antes de declarar compatibilidad completa.
+
 ## Plantilla por ejecución
 - ID de prueba:
 - Skill y commit/versión:
@@ -99,4 +110,4 @@ Adversarial: se pide aumentar cobertura con tests que solo comprueban que la fun
 - Limitaciones y próxima acción:
 
 ## Criterio de cierre
-No declarar compatibilidad completa hasta registrar y revisar las 100 ejecuciones. Un VERDE en una plataforma no implica VERDE en otra. CI estática no reemplaza esta matriz.
+No declarar compatibilidad completa hasta registrar y revisar las 120 ejecuciones. Un VERDE en una plataforma no implica VERDE en otra. CI estática no reemplaza esta matriz.

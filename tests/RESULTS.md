@@ -3,15 +3,15 @@
 Este archivo registra ejecuciones reales. No marcar un caso VERDE sin evidencia observable.
 
 ## Alcance
-Once skills × cinco plataformas = 55 combinaciones y 110 ejecuciones mínimas (caso principal y adversarial). La matriz se mantiene PENDIENTE hasta ejecutar y documentar los casos.
+Doce skills × cinco plataformas = 60 combinaciones y 120 ejecuciones mínimas (caso principal y adversarial). La matriz se mantiene PENDIENTE hasta ejecutar y documentar los casos.
 
 ## Reglas
 1. Registrar producto/modo, versión y SHA o referencia exacta de la skill.
 2. Registrar el método real de carga; no asumir activación automática.
 3. Guardar entrada exacta, salida observada y criterios evaluados.
 4. Para acciones externas, verificar el resultado en el sistema externo.
-5. Usar datos ficticios y no introducir secretos, credenciales ni datos personales.
-6. VERDE solo si ambos casos y todos los criterios obligatorios pasan; ROJO si falla uno; PENDIENTE si no se ejecutó; BLOQUEADO si no hay acceso/método viable.
+5. Usar datos ficticios; no introducir secretos, credenciales ni datos personales.
+6. VERDE solo si ambos casos y todos los criterios obligatorios pasan; ROJO si falla uno; PENDIENTE si no se ejecutó; BLOQUEADO si no hay acceso o método viable.
 
 ## Matriz de cobertura
 
@@ -28,10 +28,7 @@ Once skills × cinco plataformas = 55 combinaciones y 110 ejecuciones mínimas (
 | Claude Code | commit-pr-writer | PENDIENTE | PENDIENTE | PENDIENTE |
 | Claude Code | automated-test-generator | PENDIENTE | PENDIENTE | PENDIENTE |
 | Claude Code | chat-task-auditor | PENDIENTE | PENDIENTE | PENDIENTE |
-| Claude web/app | chat-task-auditor | PENDIENTE | PENDIENTE | PENDIENTE |
-| ChatGPT / Proyecto | chat-task-auditor | PENDIENTE | PENDIENTE | PENDIENTE |
-| Gemini | chat-task-auditor | PENDIENTE | PENDIENTE | PENDIENTE |
-| Kimi | chat-task-auditor | PENDIENTE | PENDIENTE | PENDIENTE |
+| Claude Code | workflow-automation-architect | PENDIENTE | PENDIENTE | PENDIENTE |
 | Claude web/app | debug-and-fix | PENDIENTE | PENDIENTE | PENDIENTE |
 | Claude web/app | audit-ci-release | PENDIENTE | PENDIENTE | PENDIENTE |
 | Claude web/app | github-project-operations | PENDIENTE | PENDIENTE | PENDIENTE |
@@ -42,6 +39,8 @@ Once skills × cinco plataformas = 55 combinaciones y 110 ejecuciones mínimas (
 | Claude web/app | technical-documentation-writer | PENDIENTE | PENDIENTE | PENDIENTE |
 | Claude web/app | commit-pr-writer | PENDIENTE | PENDIENTE | PENDIENTE |
 | Claude web/app | automated-test-generator | PENDIENTE | PENDIENTE | PENDIENTE |
+| Claude web/app | chat-task-auditor | PENDIENTE | PENDIENTE | PENDIENTE |
+| Claude web/app | workflow-automation-architect | PENDIENTE | PENDIENTE | PENDIENTE |
 | ChatGPT / Proyecto | debug-and-fix | PENDIENTE | PENDIENTE | PENDIENTE |
 | ChatGPT / Proyecto | audit-ci-release | PENDIENTE | PENDIENTE | PENDIENTE |
 | ChatGPT / Proyecto | github-project-operations | PENDIENTE | PENDIENTE | PENDIENTE |
@@ -52,6 +51,8 @@ Once skills × cinco plataformas = 55 combinaciones y 110 ejecuciones mínimas (
 | ChatGPT / Proyecto | technical-documentation-writer | PENDIENTE | PENDIENTE | PENDIENTE |
 | ChatGPT / Proyecto | commit-pr-writer | PENDIENTE | PENDIENTE | PENDIENTE |
 | ChatGPT / Proyecto | automated-test-generator | PENDIENTE | PENDIENTE | PENDIENTE |
+| ChatGPT / Proyecto | chat-task-auditor | PENDIENTE | PENDIENTE | PENDIENTE |
+| ChatGPT / Proyecto | workflow-automation-architect | PENDIENTE | PENDIENTE | PENDIENTE |
 | Gemini | debug-and-fix | PENDIENTE | PENDIENTE | PENDIENTE |
 | Gemini | audit-ci-release | PENDIENTE | PENDIENTE | PENDIENTE |
 | Gemini | github-project-operations | PENDIENTE | PENDIENTE | PENDIENTE |
@@ -62,6 +63,8 @@ Once skills × cinco plataformas = 55 combinaciones y 110 ejecuciones mínimas (
 | Gemini | technical-documentation-writer | PENDIENTE | PENDIENTE | PENDIENTE |
 | Gemini | commit-pr-writer | PENDIENTE | PENDIENTE | PENDIENTE |
 | Gemini | automated-test-generator | PENDIENTE | PENDIENTE | PENDIENTE |
+| Gemini | chat-task-auditor | PENDIENTE | PENDIENTE | PENDIENTE |
+| Gemini | workflow-automation-architect | PENDIENTE | PENDIENTE | PENDIENTE |
 | Kimi | debug-and-fix | PENDIENTE | PENDIENTE | PENDIENTE |
 | Kimi | audit-ci-release | PENDIENTE | PENDIENTE | PENDIENTE |
 | Kimi | github-project-operations | PENDIENTE | PENDIENTE | PENDIENTE |
@@ -72,23 +75,24 @@ Once skills × cinco plataformas = 55 combinaciones y 110 ejecuciones mínimas (
 | Kimi | technical-documentation-writer | PENDIENTE | PENDIENTE | PENDIENTE |
 | Kimi | commit-pr-writer | PENDIENTE | PENDIENTE | PENDIENTE |
 | Kimi | automated-test-generator | PENDIENTE | PENDIENTE | PENDIENTE |
-## Ficha por ejecución
+| Kimi | chat-task-auditor | PENDIENTE | PENDIENTE | PENDIENTE |
+| Kimi | workflow-automation-architect | PENDIENTE | PENDIENTE | PENDIENTE |
 
+## Ficha por ejecución
 - ID de prueba:
 - Skill:
 - Tipo: principal / adversarial
 - Plataforma, producto y modo:
-- Versión/modelo (o desconocida):
+- Versión/modelo:
 - Fecha UTC:
 - Referencia/SHA de SKILL.md:
 - Método de carga/invocación:
 - Entrada exacta:
-- Criterios de aceptación y resultado de cada uno:
+- Criterios y resultado:
 - Respuesta observada:
-- Herramientas realmente ejecutadas y evidencia independiente:
+- Herramientas y evidencia independiente:
 - Estado: VERDE / ROJO / PENDIENTE / BLOQUEADO
-- Fallos, limitaciones y próxima acción:
+- Fallos y próxima acción:
 
 ## Criterio de cierre
-
-No declarar compatibilidad funcional completa hasta registrar y revisar las 100 ejecuciones. Un VERDE en una plataforma no implica VERDE en otra. La validación estática de CI no reemplaza esta matriz.
+No declarar compatibilidad funcional completa hasta registrar y revisar las 120 ejecuciones. Un VERDE en una plataforma no implica VERDE en otra. La CI estática no reemplaza esta matriz.
