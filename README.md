@@ -26,6 +26,7 @@ El repositorio se distribuye bajo la [licencia MIT](LICENSE). Consulta el archiv
 - [technical-documentation-writer](.claude/skills/technical-documentation-writer/SKILL.md): crear y auditar documentación técnica reproducible.
 - [commit-pr-writer](.claude/skills/commit-pr-writer/SKILL.md): redactar commits, PR y notas de versión fieles al diff.
 - [automated-test-generator](.claude/skills/automated-test-generator/SKILL.md): diseñar pruebas unitarias, de integración y regresión.
+- [chat-task-auditor](.claude/skills/chat-task-auditor/SKILL.md): auditar recurrencias en chats y ordenar pendientes en bloques A/B/C.
 
 Cada skill tiene su propio `CHANGELOG.md`.
 
@@ -59,7 +60,7 @@ Las guías previas siguen disponibles: [Claude](docs/uso-claude.md), [ChatGPT](d
 
 ## Pruebas funcionales
 
-La matriz incluye diez skills en Claude Code, Claude web/app, ChatGPT, Gemini y Kimi: **50 combinaciones plataforma-skill y 100 ejecuciones mínimas** (caso principal y adversarial). La matriz sigue en PENDIENTE hasta que las ejecuciones reales tengan evidencia registrada. La CI estática comprueba estructura y documentación; no demuestra compatibilidad funcional entre plataformas.
+La matriz incluye once skills en Claude Code, Claude web/app, ChatGPT, Gemini y Kimi: **55 combinaciones plataforma-skill y 110 ejecuciones mínimas** (caso principal y adversarial). La matriz sigue en PENDIENTE hasta que las ejecuciones reales tengan evidencia registrada. La CI estática comprueba estructura y documentación; no demuestra compatibilidad funcional entre plataformas.
 
 ## Estado del proyecto
 

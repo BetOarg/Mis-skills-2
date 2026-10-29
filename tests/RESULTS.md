@@ -3,7 +3,7 @@
 Este archivo registra ejecuciones reales. No marcar un caso VERDE sin evidencia observable.
 
 ## Alcance
-Diez skills × cinco plataformas = 50 combinaciones y 100 ejecuciones mínimas (caso principal y adversarial). La matriz se mantiene PENDIENTE hasta ejecutar y documentar los casos.
+Once skills × cinco plataformas = 55 combinaciones y 110 ejecuciones mínimas (caso principal y adversarial). La matriz se mantiene PENDIENTE hasta ejecutar y documentar los casos.
 
 ## Reglas
 1. Registrar producto/modo, versión y SHA o referencia exacta de la skill.
@@ -27,6 +27,11 @@ Diez skills × cinco plataformas = 50 combinaciones y 100 ejecuciones mínimas (
 | Claude Code | technical-documentation-writer | PENDIENTE | PENDIENTE | PENDIENTE |
 | Claude Code | commit-pr-writer | PENDIENTE | PENDIENTE | PENDIENTE |
 | Claude Code | automated-test-generator | PENDIENTE | PENDIENTE | PENDIENTE |
+| Claude Code | chat-task-auditor | PENDIENTE | PENDIENTE | PENDIENTE |
+| Claude web/app | chat-task-auditor | PENDIENTE | PENDIENTE | PENDIENTE |
+| ChatGPT / Proyecto | chat-task-auditor | PENDIENTE | PENDIENTE | PENDIENTE |
+| Gemini | chat-task-auditor | PENDIENTE | PENDIENTE | PENDIENTE |
+| Kimi | chat-task-auditor | PENDIENTE | PENDIENTE | PENDIENTE |
 | Claude web/app | debug-and-fix | PENDIENTE | PENDIENTE | PENDIENTE |
 | Claude web/app | audit-ci-release | PENDIENTE | PENDIENTE | PENDIENTE |
 | Claude web/app | github-project-operations | PENDIENTE | PENDIENTE | PENDIENTE |
