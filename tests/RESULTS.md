@@ -3,7 +3,7 @@
 Este archivo registra ejecuciones reales. No marcar un caso VERDE sin evidencia observable.
 
 ## Alcance
-Doce skills × cinco plataformas = 60 combinaciones y 120 ejecuciones mínimas (caso principal y adversarial). La matriz se mantiene PENDIENTE hasta ejecutar y documentar los casos.
+Dieciocho skills × cinco plataformas = 90 combinaciones y 180 ejecuciones mínimas (caso principal y adversarial). La matriz permanece PENDIENTE hasta ejecutar y documentar los casos.
 
 ## Reglas
 1. Registrar producto/modo, versión y SHA o referencia exacta de la skill.
@@ -29,6 +29,12 @@ Doce skills × cinco plataformas = 60 combinaciones y 120 ejecuciones mínimas (
 | Claude Code | automated-test-generator | PENDIENTE | PENDIENTE | PENDIENTE |
 | Claude Code | chat-task-auditor | PENDIENTE | PENDIENTE | PENDIENTE |
 | Claude Code | workflow-automation-architect | PENDIENTE | PENDIENTE | PENDIENTE |
+| Claude Code | project-orchestrator | PENDIENTE | PENDIENTE | PENDIENTE |
+| Claude Code | smart-task-intake | PENDIENTE | PENDIENTE | PENDIENTE |
+| Claude Code | context-handoff-manager | PENDIENTE | PENDIENTE | PENDIENTE |
+| Claude Code | evidence-verifier | PENDIENTE | PENDIENTE | PENDIENTE |
+| Claude Code | decision-and-risk-manager | PENDIENTE | PENDIENTE | PENDIENTE |
+| Claude Code | workflow-optimizer | PENDIENTE | PENDIENTE | PENDIENTE |
 | Claude web/app | debug-and-fix | PENDIENTE | PENDIENTE | PENDIENTE |
 | Claude web/app | audit-ci-release | PENDIENTE | PENDIENTE | PENDIENTE |
 | Claude web/app | github-project-operations | PENDIENTE | PENDIENTE | PENDIENTE |
@@ -41,6 +47,12 @@ Doce skills × cinco plataformas = 60 combinaciones y 120 ejecuciones mínimas (
 | Claude web/app | automated-test-generator | PENDIENTE | PENDIENTE | PENDIENTE |
 | Claude web/app | chat-task-auditor | PENDIENTE | PENDIENTE | PENDIENTE |
 | Claude web/app | workflow-automation-architect | PENDIENTE | PENDIENTE | PENDIENTE |
+| Claude web/app | project-orchestrator | PENDIENTE | PENDIENTE | PENDIENTE |
+| Claude web/app | smart-task-intake | PENDIENTE | PENDIENTE | PENDIENTE |
+| Claude web/app | context-handoff-manager | PENDIENTE | PENDIENTE | PENDIENTE |
+| Claude web/app | evidence-verifier | PENDIENTE | PENDIENTE | PENDIENTE |
+| Claude web/app | decision-and-risk-manager | PENDIENTE | PENDIENTE | PENDIENTE |
+| Claude web/app | workflow-optimizer | PENDIENTE | PENDIENTE | PENDIENTE |
 | ChatGPT / Proyecto | debug-and-fix | PENDIENTE | PENDIENTE | PENDIENTE |
 | ChatGPT / Proyecto | audit-ci-release | PENDIENTE | PENDIENTE | PENDIENTE |
 | ChatGPT / Proyecto | github-project-operations | PENDIENTE | PENDIENTE | PENDIENTE |
@@ -53,6 +65,12 @@ Doce skills × cinco plataformas = 60 combinaciones y 120 ejecuciones mínimas (
 | ChatGPT / Proyecto | automated-test-generator | PENDIENTE | PENDIENTE | PENDIENTE |
 | ChatGPT / Proyecto | chat-task-auditor | PENDIENTE | PENDIENTE | PENDIENTE |
 | ChatGPT / Proyecto | workflow-automation-architect | PENDIENTE | PENDIENTE | PENDIENTE |
+| ChatGPT / Proyecto | project-orchestrator | PENDIENTE | PENDIENTE | PENDIENTE |
+| ChatGPT / Proyecto | smart-task-intake | PENDIENTE | PENDIENTE | PENDIENTE |
+| ChatGPT / Proyecto | context-handoff-manager | PENDIENTE | PENDIENTE | PENDIENTE |
+| ChatGPT / Proyecto | evidence-verifier | PENDIENTE | PENDIENTE | PENDIENTE |
+| ChatGPT / Proyecto | decision-and-risk-manager | PENDIENTE | PENDIENTE | PENDIENTE |
+| ChatGPT / Proyecto | workflow-optimizer | PENDIENTE | PENDIENTE | PENDIENTE |
 | Gemini | debug-and-fix | PENDIENTE | PENDIENTE | PENDIENTE |
 | Gemini | audit-ci-release | PENDIENTE | PENDIENTE | PENDIENTE |
 | Gemini | github-project-operations | PENDIENTE | PENDIENTE | PENDIENTE |
@@ -65,6 +83,12 @@ Doce skills × cinco plataformas = 60 combinaciones y 120 ejecuciones mínimas (
 | Gemini | automated-test-generator | PENDIENTE | PENDIENTE | PENDIENTE |
 | Gemini | chat-task-auditor | PENDIENTE | PENDIENTE | PENDIENTE |
 | Gemini | workflow-automation-architect | PENDIENTE | PENDIENTE | PENDIENTE |
+| Gemini | project-orchestrator | PENDIENTE | PENDIENTE | PENDIENTE |
+| Gemini | smart-task-intake | PENDIENTE | PENDIENTE | PENDIENTE |
+| Gemini | context-handoff-manager | PENDIENTE | PENDIENTE | PENDIENTE |
+| Gemini | evidence-verifier | PENDIENTE | PENDIENTE | PENDIENTE |
+| Gemini | decision-and-risk-manager | PENDIENTE | PENDIENTE | PENDIENTE |
+| Gemini | workflow-optimizer | PENDIENTE | PENDIENTE | PENDIENTE |
 | Kimi | debug-and-fix | PENDIENTE | PENDIENTE | PENDIENTE |
 | Kimi | audit-ci-release | PENDIENTE | PENDIENTE | PENDIENTE |
 | Kimi | github-project-operations | PENDIENTE | PENDIENTE | PENDIENTE |
@@ -77,6 +101,12 @@ Doce skills × cinco plataformas = 60 combinaciones y 120 ejecuciones mínimas (
 | Kimi | automated-test-generator | PENDIENTE | PENDIENTE | PENDIENTE |
 | Kimi | chat-task-auditor | PENDIENTE | PENDIENTE | PENDIENTE |
 | Kimi | workflow-automation-architect | PENDIENTE | PENDIENTE | PENDIENTE |
+| Kimi | project-orchestrator | PENDIENTE | PENDIENTE | PENDIENTE |
+| Kimi | smart-task-intake | PENDIENTE | PENDIENTE | PENDIENTE |
+| Kimi | context-handoff-manager | PENDIENTE | PENDIENTE | PENDIENTE |
+| Kimi | evidence-verifier | PENDIENTE | PENDIENTE | PENDIENTE |
+| Kimi | decision-and-risk-manager | PENDIENTE | PENDIENTE | PENDIENTE |
+| Kimi | workflow-optimizer | PENDIENTE | PENDIENTE | PENDIENTE |
 
 ## Ficha por ejecución
 - ID de prueba:
@@ -90,9 +120,9 @@ Doce skills × cinco plataformas = 60 combinaciones y 120 ejecuciones mínimas (
 - Entrada exacta:
 - Criterios y resultado:
 - Respuesta observada:
-- Herramientas y evidencia independiente:
+- Herramientas y evidencia:
 - Estado: VERDE / ROJO / PENDIENTE / BLOQUEADO
 - Fallos y próxima acción:
 
 ## Criterio de cierre
-No declarar compatibilidad funcional completa hasta registrar y revisar las 120 ejecuciones. Un VERDE en una plataforma no implica VERDE en otra. La CI estática no reemplaza esta matriz.
+No declarar compatibilidad funcional completa hasta registrar y revisar las 180 ejecuciones. Un VERDE en una plataforma no implica VERDE en otra. CI estática no reemplaza esta matriz.

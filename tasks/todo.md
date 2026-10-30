@@ -1,53 +1,45 @@
-# Plan de trabajo — arquitectura multiplataforma y pruebas
+# Plan de trabajo — Mis-skills
 
-## Objetivo
-Mantener una fuente única por skill y separar los prompts/adaptadores por aplicación, con compatibilidad basada en evidencia.
+## Estado verificado al iniciar esta rama
+- `main` contiene 12 skills, incluida `workflow-automation-architect`.
+- PR #4 está fusionado.
+- CI post-merge run #41 (SHA `4c3cca1bb14105b479a84e1c178b47bf2ed066aa`) terminó en VERDE.
+- No había PR abiertos al iniciar este trabajo.
 
-## Cambios de arquitectura integrados en `main`
-- [x] Auditar la estructura actual de main antes de editar.
-- [x] Mantener las diez skills existentes y su changelog sin duplicarlas por plataforma.
-- [x] Crear prompts separados para Claude web/app, ChatGPT, Gemini y Kimi.
-- [x] Mantener la guía específica de Claude Code.
-- [x] Añadir adaptadores por plataforma con límites y método de carga.
-- [x] Actualizar el README para explicar la arquitectura de fuente única.
-- [x] Ampliar el validador para exigir los nuevos prompts y adaptadores.
-- [x] Ampliar la matriz a cinco plataformas distintas: Claude Code, Claude web/app, ChatGPT, Gemini y Kimi.
+## Mejora de flujo intuitivo — esta rama
 
-## Estado posterior a la integración
-- [x] PR #7 fusionado en `main` mediante squash.
-- [x] README actualizado para explicar la arquitectura, enlazar la documentación de mantenimiento y distinguir CI estática de pruebas funcionales.
-- [x] CI estática de la rama del PR aprobada antes de integrar.
-- [x] Confirmar resultado de CI posterior a la fusión: ejecución 40904380488 completada en VERDE.
-- [ ] Eliminar ramas históricas tras la revisión: el conector disponible permite listar y comparar ramas, pero no borrar refs; la limpieza destructiva queda BLOQUEADA hasta disponer de una operación de borrado.
+### Las seis skills integradas
+- [x] project-orchestrator — coordina y deriva trabajo.
+- [x] smart-task-intake — interpreta pedidos naturales y breves.
+- [x] context-handoff-manager — conserva continuidad entre sesiones.
+- [x] evidence-verifier — comprueba resultados.
+- [x] decision-and-risk-manager — registra decisiones y riesgos materiales.
+- [x] workflow-optimizer — simplifica procesos antes de automatizar.
+- [x] Conectar el routing y las reglas de activación para que no se ejecuten todas en cada pedido.
+- [x] Crear `project-orchestrator` para coordinar proyectos y derivar a skills especializadas.
+- [x] Crear `smart-task-intake` para interpretar instrucciones breves con contexto y límites de autoridad.
+- [x] Crear `context-handoff-manager` para transferir estado verificable entre chats.
+- [x] Crear `evidence-verifier` para comprobar afirmaciones contra fuentes autoritativas.
+- [x] Añadir changelogs individuales.
+- [x] Actualizar instrucciones comunes y routing.
+- [x] Actualizar README y eliminar la referencia obsoleta que decía que workflow-automation-architect seguía fuera de main.
+- [x] Añadir casos funcionales principales y adversariales para las seis skills.
+- [x] Ampliar matriz de 12 a 18 skills: 90 combinaciones / 180 ejecuciones.
+- [x] Ampliar validador estático a 18 skills.
+- [ ] Ejecutar validación de rama en GitHub Actions.
+- [ ] Confirmar que el PR #5 incluye los seis componentes y revisar que la ruta mínima evita invocar skills innecesarias.
+- [ ] Revisar diff completo y corregir fallos.
+- [ ] Abrir PR para revisión; no fusionar sin autorización explícita.
+- [ ] Verificar CI posterior a cualquier futura fusión.
 
-## Limpieza del repositorio
-- [ ] Revisar la protección de `main`: la API de ramas informa `protected: false`; no hay una operación disponible en esta conexión para cambiar la protección.
-
-## Nueva skill integrada en `main`
-- [x] Crear `chat-task-auditor` con auditoría de recurrencia de chats y limpieza A/B/C de pendientes.
-- [x] Añadir changelog, README, casos principal/adversarial y ampliar matriz a 11 skills.
-- [x] CI de la rama y CI posterior a la fusión aprobadas; PR #2 fusionado en `main`.
-
-## Pruebas funcionales pendientes
-- [ ] Completar 110 ejecuciones reales: once skills × cinco plataformas × caso principal y adversarial.
-- [ ] Registrar versión/modo, método de carga, entrada exacta, salida observada y evidencia.
-- [ ] Marcar una prueba VERDE solo cuando todos sus criterios obligatorios pasen.
-- [ ] No afirmar compatibilidad multiplataforma completa antes de revisar las 110 ejecuciones.
+## Pruebas funcionales multiplataforma
+- [ ] Ejecutar 180 casos reales: 18 skills × 5 plataformas × 2 casos.
+- [ ] Registrar plataforma, producto/modo, modelo, SHA, método de carga, entrada, salida y evidencia.
+- [ ] Mantener PENDIENTE todo caso sin ejecución/evidencia.
+- [ ] No afirmar compatibilidad completa antes de revisar los 180 registros.
 
 ## Estados
 - VERDE: controles ejecutados y aprobados con evidencia.
 - ROJO: falló un control obligatorio.
 - PENDIENTE: no ejecutado o evidencia incompleta.
 - BLOQUEADO: falta acceso, herramienta, información o autorización.
-
-
-## Nueva skill propuesta: workflow-automation-architect
-- [x] Crear skill v1.0.0 y changelog en la rama `feat/workflow-automation-architect`.
-- [x] Añadir caso principal/adversarial y ampliar matriz a doce skills.
-- [x] Actualizar README y validador para doce skills.
-- [ ] Ejecutar CI de rama, revisar diff y abrir PR.
-- [ ] Fusionar tras revisión y CI verde.
-- [ ] Verificar CI posterior a la fusión.
-
-## Pruebas funcionales
-- [ ] 120 ejecuciones reales: doce skills × cinco plataformas × dos casos. Permanecen PENDIENTES sin evidencia.

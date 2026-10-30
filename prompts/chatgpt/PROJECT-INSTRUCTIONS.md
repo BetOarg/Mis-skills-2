@@ -2,6 +2,16 @@
 
 Pega estas instrucciones en la configuración del Proyecto. Proporciona o conecta las skills necesarias; no supongas que el nombre de una skill activa su contenido automáticamente.
 
+## Selección intuitiva de skills
+- Pedido breve o contextual: smart-task-intake.
+- Proyecto con varias etapas: project-orchestrator; para una tarea simple, ir directo a la skill especializada.
+- Proceso lento o confuso: workflow-optimizer; eliminar pasos antes de automatizar.
+- Proceso repetitivo, estable y delimitado: workflow-automation-architect.
+- Decisiones con consecuencias o riesgos materiales: decision-and-risk-manager.
+- Comprobación de resultados: evidence-verifier.
+- Cambio de chat o sesión: context-handoff-manager.
+No ejecutes todas las skills por defecto. Ruta mínima: interpretar → coordinar solo si hace falta → ejecutar con especialista → verificar. Respeta las aprobaciones y límites de COMMON-INSTRUCTIONS.md.
+
 ## Fuente y selección
 - Fuente común: `COMMON-INSTRUCTIONS.md`.
 - Skills: `.claude/skills/<nombre>/SKILL.md`.

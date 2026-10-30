@@ -33,3 +33,17 @@
 - **Patrón:** varias repeticiones dentro de un mismo chat pueden confundirse con recurrencia transversal.
 - **Regla preventiva:** registrar por separado menciones, conversaciones distintas y días distintos; el umbral de más de tres se aplica a conversaciones distintas.
 - **Verificación:** comprobar el identificador/fecha de cada conversación antes de declarar un patrón recurrente.
+
+
+## 2026-10-29 — Separar interpretación, coordinación, ejecución y verificación
+- **Patrón:** una sola skill generalista puede mezclar el significado del pedido, la coordinación de dependencias y la comprobación de resultados.
+- **Regla preventiva:** usar smart-task-intake para interpretar, project-orchestrator para coordinar, skills especializadas para ejecutar y evidence-verifier para comprobar.
+- **Verificación:** comprobar que cada responsabilidad tenga activadores y exclusiones propios y que el orquestador no duplique el procedimiento especializado.
+- **Estado:** arquitectura propuesta en rama; validación CI pendiente.
+
+
+## 2026-10-29 — Integrar skills de flujo sin convertirlas en una cadena obligatoria
+- **Patrón:** agregar coordinadores, optimizadores, gestores de riesgo y verificadores puede aumentar la fricción si se ejecutan todos en cada pedido.
+- **Regla preventiva:** definir una ruta mínima (intake → coordinación solo si hace falta → especialista → verificación) y disparadores explícitos para optimización, automatización, registro de decisiones y handoff.
+- **Verificación:** incluir un caso multi-skill y un caso trivial adversarial que debe tomar la ruta corta.
+- **Estado:** reglas y casos añadidos en rama; CI pendiente.
