@@ -2,6 +2,7 @@
 """Validate skills, platform prompts/adapters, changelogs, and local Markdown links."""
 from __future__ import annotations
 
+import json
 import re
 import sys
 from pathlib import Path
@@ -27,7 +28,7 @@ REQUIRED_FILES = [
     "adapters/gemini/README.md", "adapters/kimi/README.md",
     "docs/uso-claude.md", "docs/uso-chatgpt.md", "docs/uso-kimi.md",
     "docs/compatibilidad.md", "docs/instrucciones-universales.md",
-    "tests/README.md", "tests/RESULTS.md", "tasks/todo.md", "tasks/lessons.md",
+    "tests/README.md", "tests/RESULTS.md", "tests/evaluations.json", "tasks/todo.md", "tasks/lessons.md",
 ]
 LINK_RE = re.compile(r"!?(?:\[[^\]]*\])\(([^)]+)\)")
 EXPECTED_PLATFORMS = {
@@ -174,6 +175,55 @@ def main() -> int:
                 f"La matriz debe tener {len(expected_pairs)} filas de datos; "
                 f"se encontraron {len(matrix_rows)}"
             )
+
+    evaluations_file = ROOT / "tests" / "evaluations.json"
+    if evaluations_file.is_file():
+        try:
+            evaluation_data = json.loads(evaluations_file.read_text(encoding="utf-8"))
+            cases = evaluation_data.get("cases") if isinstance(evaluation_data, dict) else None
+            expected_ids = {
+                f"{skill}-{case_type}"
+                for skill in {
+                    "debug-and-fix", "audit-ci-release", "github-project-operations",
+                    "ads-campaign-builder", "business-strategy-documents",
+                }
+                for case_type in ("positive", "negative")
+            }
+            if not isinstance(cases, list):
+                errors.append("tests/evaluations.json debe contener una lista 'cases'")
+            else:
+                seen_ids = set()
+                for case in cases:
+                    if not isinstance(case, dict):
+                        errors.append("Cada evaluación debe ser un objeto JSON")
+                        continue
+                    case_id = case.get("id")
+                    if not isinstance(case_id, str) or not case_id:
+                        errors.append("Cada evaluación debe tener un id no vacío")
+                    elif case_id in seen_ids:
+                        errors.append(f"ID de evaluación duplicado: {case_id}")
+                    else:
+                        seen_ids.add(case_id)
+                    if case.get("skill") not in EXPECTED_SKILLS:
+                        errors.append(f"Skill inválida en evaluación: {case.get('skill')}")
+                    if not isinstance(case.get("should_activate"), bool):
+                        errors.append(f"should_activate debe ser boolean en {case_id}")
+                    if not isinstance(case.get("prompt"), str) or not case.get("prompt", "").strip():
+                        errors.append(f"Prompt vacío o inválido en {case_id}")
+                    for field in ("expected_behavior", "prohibited_behavior"):
+                        values = case.get(field)
+                        if not isinstance(values, list) or not values or not all(
+                            isinstance(value, str) and value.strip() for value in values
+                        ):
+                            errors.append(f"{field} debe ser una lista no vacía de textos en {case_id}")
+                if seen_ids != expected_ids:
+                    errors.append(
+                        "Los casos piloto deben incluir un caso positive y negative para cada "
+                        f"una de las cinco skills: faltan={sorted(expected_ids - seen_ids)}; "
+                        f"sobran={sorted(seen_ids - expected_ids)}"
+                    )
+        except (json.JSONDecodeError, OSError) as exc:
+            errors.append(f"tests/evaluations.json no se puede leer como JSON válido: {exc}")
 
     markdown_files = sorted(ROOT.rglob("*.md"))
     for md_file in markdown_files:
