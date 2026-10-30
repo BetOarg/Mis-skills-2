@@ -13,7 +13,8 @@ Biblioteca de Agent Skills reutilizables para desarrollo de software, publicidad
   - [Gemini](prompts/gemini/GEMINI.md)
   - [Kimi](prompts/kimi/KIMI.md)
 - **Adaptadores:** [guía general](adapters/README.md), con instrucciones específicas por plataforma.
-- **Pruebas:** [protocolo funcional](tests/README.md) y [matriz de resultados](tests/RESULTS.md).
+- **Pruebas:** [protocolo funcional](tests/README.md), [matriz de resultados](tests/RESULTS.md) y [casos machine-readable](tests/evaluations.json).
+- **Investigación:** [auditoría comparativa de Agent Skills](docs/auditoria-comparativa-skills-2026-10.md).
 
 ## Skills disponibles
 
@@ -88,12 +89,31 @@ Plataformas contempladas: Claude Code, Claude web/app, ChatGPT (Proyecto), Gemin
 
 Todas las ejecuciones permanecen **PENDIENTES** hasta que se realicen y documenten con plataforma/producto/modo, versión/modelo, referencia o SHA de la skill, método de carga, entrada exacta, salida observada y evidencia. La CI estática valida estructura y documentación; no demuestra compatibilidad funcional ni coordinación real entre plataformas.
 
+## Auditoría comparativa de Agent Skills — octubre de 2026
+
+Se revisaron las referencias de [Matt Pocock](https://github.com/mattpocock/skills), [Anthropic Skills](https://github.com/anthropics/skills), [Claude Plugins Official](https://github.com/anthropics/claude-plugins-official), [Google Skills](https://github.com/google/skills), [OpenAI Skills](https://github.com/openai/skills) y [NVIDIA Skills](https://github.com/NVIDIA/skills). La auditoría y sus conclusiones están en [el informe comparativo](docs/auditoria-comparativa-skills-2026-10.md).
+
+Principales mejoras incorporadas a cinco skills:
+- `debug-and-fix`: reproducción, diagnóstico falsable y pruebas de regresión.
+- `audit-ci-release`: evaluación conductual y revisión de supply chain.
+- `github-project-operations`: manifests, permisos, procedencia y SHA inmutables.
+- `ads-campaign-builder`: experimentación, atribución, guardrails y economía unitaria.
+- `business-strategy-documents`: registro de evidencia, escenarios y matriz de negociación.
+
+**Nota de vigencia:** `openai/skills` está marcado como deprecated; para ejemplos actuales de plugins Codex consultar [openai/plugins](https://github.com/openai/plugins).
+
+### Evaluaciones piloto
+
+[`tests/evaluations.json`](tests/evaluations.json) contiene diez casos (uno principal y uno adversarial para cada una de las cinco skills mejoradas). Son definiciones de prueba, no resultados ejecutados. La CI valida su estructura; la evaluación conductual requiere ejecución real y registro de evidencia.
+
 ## Estado del repositorio
 
-- Las seis propuestas de flujo están integradas en `main` mediante el PR [#5](https://github.com/BetOarg/Mis-skills-2/pull/5).
-- Commit de integración: `825a55f28c51562e03a0bd1c85c2be5a3ada677e`.
-- CI posterior a la fusión: ejecución [#92](https://github.com/BetOarg/Mis-skills-2/actions/runs/40984064962), **SUCCESS** sobre el commit de integración.
-- La validación estática confirma estructura y documentación; las 180 ejecuciones funcionales siguen PENDIENTES.
+- Repositorio principal: `main`.
+- La integración previa de las seis skills de flujo se realizó mediante el PR [#5](https://github.com/BetOarg/Mis-skills-2/pull/5), commit `825a55f28c51562e03a0bd1c85c2be5a3ada677e`.
+- Esta auditoría se prepara en la rama `feat/reference-audit-2026-10`; su CI de validación estática [#120](https://github.com/BetOarg/Mis-skills-2/actions/runs/40994053267) terminó **SUCCESS** sobre el SHA `354fcea26aaa60887b40093306a6ee21ef81715b`.
+- El resultado de CI corresponde a esa rama y ese commit; no debe interpretarse como una ejecución posterior a la fusión.
+- La matriz completa de 180 pruebas funcionales continúa **PENDIENTE**. Tampoco se deben marcar como ejecutados los diez casos piloto hasta registrar resultados reales.
+- La protección de `main` debe revisarse por separado; el estado consultado en GitHub no mostraba reglas de protección activas.
 
 ## Estados
 

@@ -67,3 +67,12 @@ Action: inventory them, distinguish completed from unresolved work, present the 
 User: “Clean old branches.”
 Bad action: delete every branch that is not named main.
 Why bad: some branches may contain unique, unmerged work or support an open release.
+
+## Plugin and skill distribution safety
+When inspecting or preparing an installable skill/plugin bundle:
+- Verify the manifest schema, unique and stable plugin/skill identifiers, declared entry points, source path, license, and documentation.
+- Prefer pinning external sources to an immutable commit SHA; record the repository, path, ref, and SHA used for the review. A branch name such as `main` is mutable and is not a reproducible release reference.
+- Treat MCP servers, scripts, hooks, and external binaries as executable supply-chain components. Review requested permissions, network destinations, credential handling, install/update commands, and workflow token scopes before recommending installation.
+- Do not infer trust from a marketplace listing or vendor name. Require the user to trust the publisher and inspect the specific version before installation.
+- Preserve published slugs as stable identifiers. If a platform documents immutable plugin names, use a display label for cosmetic changes and a documented migration map for renames.
+- After any approved manifest or repository mutation, fetch the changed file and resulting ref again; report the exact source SHA and observed state.

@@ -60,3 +60,14 @@ Action: inspect the supplied performance window, spend, conversions, lead qualit
 User: “Create an ad campaign.”
 Bad action: claim an expected CPL, fabricate a discount, select a large budget without context, and activate the campaign immediately.
 Why bad: unsupported claims and unapproved spend create commercial and compliance risk.
+
+## Experiment design and measurement discipline
+Before recommending optimization tests, define each experiment explicitly:
+- **Hypothesis:** the specific audience, query intent, message, offer, placement, or landing-page change expected to affect a named metric, with a reason grounded in available evidence.
+- **Variable and comparison:** change one primary variable where practical; state the control/baseline and avoid mixing unrelated changes in the same test.
+- **Primary metric and guardrails:** define the conversion metric (for example qualified lead rate or cost per qualified lead) and guardrails such as lead quality, invalid-contact rate, frequency, spend, or policy risk.
+- **Window and decision rule:** set a review window and minimum evidence requirement appropriate to spend and conversion volume. If volume is too low, report the result as inconclusive; do not declare a winner from noise or arbitrary small samples.
+- **Stop/scale conditions:** define pause, continue, and scale criteria before launch. Never lower the success threshold after seeing results merely to call a test successful.
+- **Attribution and data quality:** check event deduplication, consent, UTMs, CRM status mapping, offline conversion imports, and lead-source reconciliation before comparing campaigns.
+- **Economics:** where inputs are supplied, calculate break-even cost per lead or acquisition from contribution margin and lead-to-sale rate; show the formula and assumptions. Do not invent margin, close rate, or lifetime value.
+- Report actual platform results separately from modeled scenarios. A campaign plan, preview, or simulated benchmark is not evidence of live performance.

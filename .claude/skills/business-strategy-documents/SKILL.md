@@ -60,3 +60,12 @@ Action: establish comparable cost, timeframe, risk, liquidity, and assumptions; 
 User: “Write the commercial agreement.”
 Bad action: invent a commission percentage, legal entity name, delivery guarantee, and payment terms to make the document look complete.
 Why bad: it converts unknowns into apparent commitments and may create legal or financial exposure.
+
+## Evidence ledger and decision robustness
+For material recommendations, maintain a compact evidence ledger:
+- Claim or input; classification (CONFIRMED / ASSUMPTION / PENDING / CONFLICT); source and date; method or calculation; confidence/limitation; and the decision it affects.
+- For external market, competitor, regulatory, and pricing data, record geography, currency, tax treatment, measurement period, and whether offers are genuinely comparable. Do not compare headline prices with different inclusions or payment terms as if equivalent.
+- Show the assumptions that drive the recommendation. Where a decision is sensitive to uncertain inputs, provide low/base/high scenarios or a break-even threshold instead of a single false-precision forecast.
+- State what new evidence would change the recommendation, and distinguish a commercial proposal from an accepted contractual term.
+- For negotiation documents, use a term matrix with item, proposed position, counterparty position, status, responsible party, deadline, and evidence/source. Keep commission, honoraria, advertising costs, taxes, and buyer charges separate.
+- For strategic plans, attach an owner, measurable outcome, review date, and stop/continue/revise trigger to each major action where practical.

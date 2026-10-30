@@ -61,3 +61,18 @@ Action: inspect the repository interface and integration test, reproduce with cl
 User: “CI is red.”
 Bad action: change several unrelated files, remove the failing test, and announce “all green” because one local command passed.
 Why bad: it hides the failure, lacks root-cause evidence, increases regression risk, and misreports verification.
+
+## Feedback-loop quality and debugging depth
+Choose the diagnostic method proportionally to the defect:
+- For a small, deterministic defect, start with the narrowest failing test or command; do not build an elaborate harness unnecessarily.
+- For intermittent, cross-layer, performance, or hard-to-reproduce defects, first create a red-capable feedback loop that exercises the user's actual symptom. Prefer, in order, a regression test, focused HTTP/CLI/browser replay, captured-trace replay, minimal harness, property/fuzz loop, or differential/bisection run.
+- Before accepting a loop, state what exact symptom it detects, how to run it, and what makes the result deterministic. If no viable loop can be built, record what was attempted and identify the missing access or artifact; do not present an untested hypothesis as a diagnosis.
+- Minimize a reproducer one change at a time. Rank 3–5 falsifiable hypotheses for complex defects and test one variable per probe. For routine defects, do not force this ceremony if the evidence already isolates the cause.
+- When a fix is complete, rerun both the minimized regression and the original end-to-end symptom check.
+
+## Regression-test quality
+- Test observable behavior through the narrowest public interface that still reproduces the defect; avoid coupling tests to private implementation details.
+- Use an independent expected result from a requirement, known-good example, or fixture. Do not derive the expected value using the same logic as the implementation.
+- Work in vertical slices: one meaningful failing test, one minimal fix, then repeat. Avoid writing a large batch of speculative tests before understanding the behavior.
+- Record a test seam's coverage and limitations. If no suitable seam exists, state that architectural gap instead of adding a misleading shallow test.
+- Redact secrets and personal data from logs, traces, screenshots, and captured requests before displaying or storing them.
