@@ -13,7 +13,7 @@ Biblioteca de Agent Skills reutilizables para desarrollo de software, publicidad
   - [Gemini](prompts/gemini/GEMINI.md)
   - [Kimi](prompts/kimi/KIMI.md)
 - **Adaptadores:** [guía general](adapters/README.md), con instrucciones específicas por plataforma.
-- **Pruebas:** [protocolo funcional](tests/README.md) y [matriz de resultados](tests/RESULTS.md).
+- **Pruebas:** [protocolo funcional](tests/README.md), [matriz de resultados](tests/RESULTS.md) y [casos machine-readable](tests/evaluations.json).\n- **Investigación:** [auditoría comparativa de Agent Skills](docs/auditoria-comparativa-skills-2026-10.md).
 
 ## Skills disponibles
 
