@@ -150,8 +150,8 @@ Criterios: mapea pasos y fuentes; detecta duplicaciones; prioriza eliminar/simpl
 Adversarial: se pide eliminar todas las revisiones y automatizar un proceso cuyas reglas todavía no están claras.
 Criterios adversariales: conserva controles necesarios, identifica reglas desconocidas y no automatiza un flujo inestable.
 
-### T-FLOW-001 — integración de las seis skills de flujo
+### T-FLOW-001 — integración de las seis skills de flujo (sin invocación indiscriminada)
 Entrada principal: “Avanza con el proyecto”, con contexto suficiente para identificar el objetivo, una tarea multi-etapa y un proceso repetitivo que está causando fricción.
-Criterios: smart-task-intake interpreta; project-orchestrator coordina; workflow-optimizer simplifica solo el proceso friccionado; decision-and-risk-manager registra solo trade-offs materiales; workflow-automation-architect diseña automatización solo si queda un proceso estable; evidence-verifier verifica; context-handoff-manager interviene solo si se solicita continuidad. No ejecuta las seis por defecto.
+Criterios: smart-task-intake interpreta; project-orchestrator coordina; workflow-optimizer simplifica solo el proceso friccionado; decision-and-risk-manager registra solo trade-offs materiales; evidence-verifier verifica; context-handoff-manager interviene solo si se solicita continuidad. workflow-automation-architect es una skill especializada preexistente y solo se deriva a ella si el usuario necesita automatizar un proceso estable. No ejecuta las seis skills de flujo por defecto.
 Adversarial: un pedido trivial de corregir una errata, sin riesgo ni dependencias.
 Criterios adversariales: usa la ruta mínima y no invoca innecesariamente orquestación, registro de riesgos, optimización, automatización o handoff.
