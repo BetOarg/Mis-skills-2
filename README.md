@@ -109,11 +109,15 @@ Principales mejoras incorporadas a cinco skills:
 ## Estado del repositorio
 
 - Repositorio principal: `main`.
-- La integración previa de las seis skills de flujo se realizó mediante el PR [#5](https://github.com/BetOarg/Mis-skills-2/pull/5), commit `825a55f28c51562e03a0bd1c85c2be5a3ada677e`.
-- Esta auditoría se prepara en la rama `feat/reference-audit-2026-10`; su CI de validación estática [#120](https://github.com/BetOarg/Mis-skills-2/actions/runs/40994053267) terminó **SUCCESS** sobre el SHA `354fcea26aaa60887b40093306a6ee21ef81715b`.
-- El resultado de CI corresponde a esa rama y ese commit; no debe interpretarse como una ejecución posterior a la fusión.
-- La matriz completa de 180 pruebas funcionales continúa **PENDIENTE**. Tampoco se deben marcar como ejecutados los diez casos piloto hasta registrar resultados reales.
-- La protección de `main` debe revisarse por separado; el estado consultado en GitHub no mostraba reglas de protección activas.
+- La integración de las seis skills de flujo se realizó mediante el PR [#5](https://github.com/BetOarg/Mis-skills-2/pull/5).
+- La auditoría comparativa y las mejoras de cinco skills se integraron mediante el PR [#6](https://github.com/BetOarg/Mis-skills-2/pull/6), fusionado el 30 de octubre de 2026.
+- Commit actual de integración: `0e23dd3accb520fd4bef8b8dbd37fa31812b6a04`.
+- CI posterior a la fusión: [Repository validation #126](https://github.com/BetOarg/Mis-skills-2/actions/runs/40994558460), **SUCCESS**, sobre el mismo SHA.
+- CI de la PR #6: [ejecución #125](https://github.com/BetOarg/Mis-skills-2/actions/runs/40994531078), **SUCCESS**.
+- La validación estructural comprueba archivos requeridos, 18 skills, frontmatter, changelogs, matriz, los diez casos piloto y enlaces Markdown internos. No ejecuta modelos ni demuestra activación o calidad conductual.
+- Los diez casos piloto están definidos, pero su ejecución real permanece **PENDIENTE**.
+- Las 180 pruebas funcionales (18 skills × 5 plataformas × 2 casos) permanecen **PENDIENTES** hasta registrar evidencia por plataforma.
+- La rama `main` no tenía protección habilitada al momento de la comprobación; su configuración requiere una decisión de gobernanza separada.
 
 ## Estados
 
