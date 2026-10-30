@@ -10,7 +10,7 @@
 - [x] Revisar y fusionar el PR #5 en `main`.
 - [x] Actualizar el README y el plan de trabajo después de la fusión.
 - [x] Verificar CI posterior a la fusión: ejecución #92, SUCCESS, commit `825a55f28c51562e03a0bd1c85c2be5a3ada677e`.
-- [ ] Verificar CI del último commit documental en `main`.
+- [x] Verificar CI del último commit documental en `main`: ejecución #96, SUCCESS, SHA `9adadcfef2ddc2526dff261b3e3f51d4a70a177a`.
 
 ## Validación funcional multiplataforma
 
