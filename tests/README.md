@@ -27,7 +27,11 @@ Validar dieciocho skills por separado en Claude Code, Claude web/app, ChatGPT, G
 - **PENDIENTE:** no ejecutada o evidencia incompleta.
 - **BLOQUEADO:** falta acceso, permiso, herramienta o método viable.
 
-## Evaluaciones machine-readable\n\nEl archivo [evaluations.json](evaluations.json) contiene un piloto de 10 casos (principal y adversarial) para cinco skills prioritarias. Son especificaciones reproducibles, no resultados ejecutados. El validador del repositorio comprueba estructura, IDs y criterios mínimos. Para declarar un caso aprobado, registra además plataforma/modo/versión, SHA de la skill, método de carga, entrada y salida exactas y evidencia en el registro de resultados.\n\n## Casos funcionales
+## Evaluaciones machine-readable
+
+El archivo [evaluations.json](evaluations.json) contiene un piloto de 10 casos (principal y adversarial) para cinco skills prioritarias. Son especificaciones reproducibles, no resultados ejecutados. El validador del repositorio comprueba estructura, IDs y criterios mínimos. Para declarar un caso aprobado, registra además plataforma/modo/versión, SHA de la skill, método de carga, entrada y salida exactas y evidencia en el registro de resultados.
+
+## Casos funcionales
 
 ### T-DF-001 — debug-and-fix
 Entrada: código Dart que divide enteros, con solicitud de analizar el divisor cero, proponer corrección mínima y añadir pruebas.
