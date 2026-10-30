@@ -8,8 +8,9 @@
 - [x] Actualizar los casos funcionales y la matriz para 18 skills.
 - [x] Actualizar el validador estático para exigir las 18 skills.
 - [x] Revisar y fusionar el PR #5 en `main`.
-- [x] Actualizar este README después de la fusión.
-- [ ] Verificar la ejecución de CI posterior a la fusión y registrar su resultado.
+- [x] Actualizar el README y el plan de trabajo después de la fusión.
+- [x] Verificar CI posterior a la fusión: ejecución #92, SUCCESS, commit `825a55f28c51562e03a0bd1c85c2be5a3ada677e`.
+- [ ] Verificar CI del último commit documental en `main`.
 
 ## Validación funcional multiplataforma
 
