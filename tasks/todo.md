@@ -36,7 +36,7 @@
 - [ ] Ejecutar 180 casos reales: 18 skills × 5 plataformas × 2 casos.
 - [ ] Registrar plataforma, producto/modo, modelo, SHA, método de carga, entrada, salida y evidencia.
 - [ ] Mantener PENDIENTE todo caso sin ejecución/evidencia.
-- [ ] No afirmar compatibilidad completa antes de revisar los 160 registros.
+- [ ] No afirmar compatibilidad completa antes de revisar los 180 registros.
 
 ## Estados
 - VERDE: controles ejecutados y aprobados con evidencia.
