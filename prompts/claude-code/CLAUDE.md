@@ -2,6 +2,16 @@
 
 Este archivo complementa `COMMON-INSTRUCTIONS.md` y las skills de `.claude/skills/`. No reemplaza las instrucciones del proyecto ni concede permisos adicionales.
 
+## Selección intuitiva de skills
+- Pedido breve o contextual: smart-task-intake.
+- Proyecto con varias etapas: project-orchestrator; para una tarea simple, ir directo a la skill especializada.
+- Proceso lento o confuso: workflow-optimizer; eliminar pasos antes de automatizar.
+- Proceso repetitivo, estable y delimitado: workflow-automation-architect.
+- Decisiones con consecuencias o riesgos materiales: decision-and-risk-manager.
+- Comprobación de resultados: evidence-verifier.
+- Cambio de chat o sesión: context-handoff-manager.
+No ejecutes todas las skills por defecto. Ruta mínima: interpretar → coordinar solo si hace falta → ejecutar con especialista → verificar. Respeta las aprobaciones y límites de COMMON-INSTRUCTIONS.md.
+
 ## 1. Planificación
 - Para tareas no triviales, crea primero un plan verificable en `tasks/todo.md`.
 - Define objetivo, pasos numerados, criterios de verificación y revisión final.
