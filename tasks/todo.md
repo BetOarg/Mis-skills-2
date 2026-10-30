@@ -17,7 +17,7 @@
 - [x] Revisar las seis fuentes solicitadas y corregir la referencia OpenAI: `openai/skills` está deprecated; `openai/plugins` contiene ejemplos actuales de Codex.
 - [x] Preparar mejoras para cinco skills prioritarias y sus changelogs.
 - [x] Añadir 10 casos piloto machine-readable y validación estructural en CI.
-- [ ] Ejecutar los 10 casos piloto en plataformas reales y registrar evidencia; no confundir con las 180 pruebas completas.
+- [ ] Ejecutar los 10 casos piloto en plataformas reales y registrar evidencia; `evaluations.json` contiene definiciones, no resultados.
 - [ ] Revisar el riesgo de `main` sin protección y decidir política de protección en una tarea separada.
 
 ## Validación funcional multiplataforma
