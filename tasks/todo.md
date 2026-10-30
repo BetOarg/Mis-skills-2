@@ -19,7 +19,8 @@
 - [x] Añadir 10 casos piloto machine-readable y validación estructural en CI.
 - [ ] Ejecutar los 10 casos piloto en plataformas reales y registrar evidencia; no confundir con las 180 pruebas completas.
 - [ ] Revisar el riesgo de `main` sin protección y decidir política de protección en una tarea separada.
-\n\n- [x] Revisar las seis fuentes solicitadas y corregir la referencia OpenAI: `openai/skills` está deprecated; `openai/plugins` contiene ejemplos actuales de Codex.\n- [x] Preparar mejoras para cinco skills prioritarias y sus changelogs.\n- [x] Añadir 10 casos piloto machine-readable y validación estructural en CI.\n- [ ] Ejecutar los 10 casos piloto en plataformas reales y registrar evidencia; no confundir con las 180 pruebas completas.\n- [ ] Revisar el riesgo de `main` sin protección y decidir política de protección en una tarea separada.\n\n## Validación funcional multiplataforma
+
+## Validación funcional multiplataforma
 
 - [ ] Ejecutar las 180 pruebas: 18 skills × 5 plataformas × 2 casos (principal y adversarial).
 - [ ] Registrar para cada ejecución plataforma, producto/modo, versión/modelo, SHA de la skill, método de carga, entrada exacta, salida observada y evidencia.
