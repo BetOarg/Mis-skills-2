@@ -1,68 +1,103 @@
 # Mis-skills
 
-Biblioteca de skills reutilizables para desarrollo, negocio, auditoría y gestión de proyectos. Mantiene una fuente única por skill, instrucciones comunes y adaptadores por plataforma.
+Biblioteca de Agent Skills reutilizables para desarrollo de software, publicidad y negocio, auditoría y gestión de proyectos. Mantiene una fuente única por skill, reglas compartidas y adaptadores para distintas plataformas.
 
 ## Arquitectura
-- Skills fuente: `.claude/skills/<nombre>/SKILL.md`.
-- Instrucciones compartidas: [COMMON-INSTRUCTIONS.md](COMMON-INSTRUCTIONS.md).
-- Prompts y adaptadores por plataforma: [adapters/](adapters/README.md).
-- Casos funcionales y evidencias: [tests/README.md](tests/README.md) · [tests/RESULTS.md](tests/RESULTS.md).
 
-## Las 18 skills
-- [debug-and-fix](.claude/skills/debug-and-fix/SKILL.md): diagnosticar y corregir defectos con pruebas de regresión.
-- [audit-ci-release](.claude/skills/audit-ci-release/SKILL.md): auditar CI, repositorios y releases.
-- [github-project-operations](.claude/skills/github-project-operations/SKILL.md): gestionar issues, PR, ramas y workflows.
-- [ads-campaign-builder](.claude/skills/ads-campaign-builder/SKILL.md): diseñar campañas Google Ads y Meta Ads.
-- [business-strategy-documents](.claude/skills/business-strategy-documents/SKILL.md): preparar estrategias y documentos comerciales.
-- [senior-code-refactor](.claude/skills/senior-code-refactor/SKILL.md): refactorizar con control de regresiones.
-- [agent-skill-generator](.claude/skills/agent-skill-generator/SKILL.md): diseñar y validar skills reutilizables.
-- [technical-documentation-writer](.claude/skills/technical-documentation-writer/SKILL.md): documentar sistemas con evidencia.
-- [commit-pr-writer](.claude/skills/commit-pr-writer/SKILL.md): redactar commits y PR fieles al diff.
-- [automated-test-generator](.claude/skills/automated-test-generator/SKILL.md): diseñar pruebas automatizadas.
-- [chat-task-auditor](.claude/skills/chat-task-auditor/SKILL.md): auditar recurrencias en chats y ordenar pendientes.
-- [workflow-automation-architect](.claude/skills/workflow-automation-architect/SKILL.md): auditar trabajo recurrente y diseñar automatizaciones medibles.
-- [project-orchestrator](.claude/skills/project-orchestrator/SKILL.md): coordinar proyectos, dependencias y skills especializadas.
-- [smart-task-intake](.claude/skills/smart-task-intake/SKILL.md): interpretar instrucciones breves usando el contexto disponible.
-- [context-handoff-manager](.claude/skills/context-handoff-manager/SKILL.md): preparar transferencias de contexto para continuar en otra sesión.
-- [evidence-verifier](.claude/skills/evidence-verifier/SKILL.md): verificar afirmaciones de finalización contra fuentes autoritativas.
-- [decision-and-risk-manager](.claude/skills/decision-and-risk-manager/SKILL.md): registrar decisiones, alternativas, riesgos, responsables y aprobaciones.
-- [workflow-optimizer](.claude/skills/workflow-optimizer/SKILL.md): simplificar procesos y eliminar fricción antes de automatizarlos.
+- **Skills fuente:** `.claude/skills/<nombre>/SKILL.md`. Cada skill incluye su `CHANGELOG.md`.
+- **Reglas comunes:** [COMMON-INSTRUCTIONS.md](COMMON-INSTRUCTIONS.md).
+- **Prompts por plataforma:**
+  - [Claude Code](prompts/claude-code/CLAUDE.md)
+  - [Claude web/app](prompts/claude/PROJECT-INSTRUCTIONS.md)
+  - [ChatGPT](prompts/chatgpt/PROJECT-INSTRUCTIONS.md)
+  - [Gemini](prompts/gemini/GEMINI.md)
+  - [Kimi](prompts/kimi/KIMI.md)
+- **Adaptadores:** [guía general](adapters/README.md), con instrucciones específicas por plataforma.
+- **Pruebas:** [protocolo funcional](tests/README.md) y [matriz de resultados](tests/RESULTS.md).
 
-Cada skill tiene su propio `CHANGELOG.md`.
+## Skills disponibles
 
-## Flujo integrado e intuitivo
-1. **Entender:** `smart-task-intake` interpreta instrucciones naturales y resuelve referencias con el contexto disponible. Pregunta solo si falta un dato que cambia materialmente el resultado o la seguridad.
-2. **Coordinar:** `project-orchestrator` decide si hace falta coordinación, arma dependencias y deriva a las skills especializadas.
-3. **Decidir y proteger:** `decision-and-risk-manager` registra decisiones, riesgos, responsables y aprobaciones cuando hay trade-offs relevantes.
-4. **Simplificar:** `workflow-optimizer` elimina pasos, duplicaciones y fricción antes de proponer automatizaciones.
-5. **Ejecutar:** las skills especializadas realizan el trabajo de su dominio; `workflow-automation-architect` diseña automatizaciones solo cuando el proceso ya está delimitado.
-6. **Comprobar y continuar:** `evidence-verifier` valida los resultados; `context-handoff-manager` prepara la continuidad cuando cambia el chat o la sesión.
+El repositorio contiene **18 skills**:
 
-### Reglas de integración
-- No ejecutar las seis skills en todas las tareas. Se activan solo cuando su función aporta valor.
-- El flujo normal es intake → coordinación (si hace falta) → especialista(s) → verificación. Las otras tres se incorporan según la necesidad.
-- Una responsabilidad, una fuente de verdad: el orquestador coordina; el optimizador simplifica; el arquitecto diseña automatizaciones; el gestor de riesgos registra decisiones; el verificador comprueba evidencia.
-- Evitar repetir preguntas si la respuesta ya está disponible y sigue vigente.
-- No confundir leer un archivo de skill con invocarla automáticamente en otra plataforma.
-- La coordinación no amplía permisos ni reemplaza aprobaciones explícitas.
+| Skill | Función |
+|---|---|
+| [debug-and-fix](.claude/skills/debug-and-fix/SKILL.md) | Diagnosticar y corregir defectos con pruebas de regresión. |
+| [audit-ci-release](.claude/skills/audit-ci-release/SKILL.md) | Auditar CI, repositorios y releases. |
+| [github-project-operations](.claude/skills/github-project-operations/SKILL.md) | Gestionar issues, pull requests, ramas y workflows. |
+| [ads-campaign-builder](.claude/skills/ads-campaign-builder/SKILL.md) | Diseñar campañas Google Ads y Meta Ads. |
+| [business-strategy-documents](.claude/skills/business-strategy-documents/SKILL.md) | Preparar estrategias y documentos comerciales. |
+| [senior-code-refactor](.claude/skills/senior-code-refactor/SKILL.md) | Refactorizar con control de regresiones. |
+| [agent-skill-generator](.claude/skills/agent-skill-generator/SKILL.md) | Diseñar y validar skills reutilizables. |
+| [technical-documentation-writer](.claude/skills/technical-documentation-writer/SKILL.md) | Documentar sistemas con evidencia. |
+| [commit-pr-writer](.claude/skills/commit-pr-writer/SKILL.md) | Redactar commits y pull requests fieles al diff. |
+| [automated-test-generator](.claude/skills/automated-test-generator/SKILL.md) | Diseñar pruebas automatizadas. |
+| [chat-task-auditor](.claude/skills/chat-task-auditor/SKILL.md) | Auditar recurrencias en chats y ordenar pendientes. |
+| [workflow-automation-architect](.claude/skills/workflow-automation-architect/SKILL.md) | Auditar procesos recurrentes y diseñar automatizaciones medibles. |
+| [project-orchestrator](.claude/skills/project-orchestrator/SKILL.md) | Coordinar tareas, dependencias y skills especializadas. |
+| [smart-task-intake](.claude/skills/smart-task-intake/SKILL.md) | Interpretar pedidos naturales y referencias usando el contexto disponible. |
+| [context-handoff-manager](.claude/skills/context-handoff-manager/SKILL.md) | Preparar traspasos de contexto entre chats y sesiones. |
+| [evidence-verifier](.claude/skills/evidence-verifier/SKILL.md) | Verificar resultados y afirmaciones contra fuentes autoritativas. |
+| [decision-and-risk-manager](.claude/skills/decision-and-risk-manager/SKILL.md) | Registrar decisiones, alternativas, riesgos y aprobaciones. |
+| [workflow-optimizer](.claude/skills/workflow-optimizer/SKILL.md) | Simplificar procesos y eliminar pasos innecesarios antes de automatizar. |
+
+## Flujo integrado de trabajo
+
+Las seis skills de flujo se coordinan con las skills especialistas. **No se ejecutan todas en cada solicitud**: se activa cada una solo cuando aporta valor.
+
+1. **Interpretar — `smart-task-intake`:** entiende el pedido, identifica referencias y aprovecha el contexto disponible. Pregunta únicamente cuando falta un dato material.
+2. **Coordinar — `project-orchestrator`:** determina si la tarea necesita varias etapas, dependencias o especialistas. Para tareas simples, mantiene la ruta mínima.
+3. **Optimizar — `workflow-optimizer`:** detecta pasos redundantes, fricción y oportunidades de simplificación cuando el proceso lo necesita.
+4. **Gestionar decisiones y riesgos — `decision-and-risk-manager`:** registra alternativas, impactos, riesgos y aprobaciones cuando existen decisiones relevantes.
+5. **Ejecutar y verificar — skills especialistas + `evidence-verifier`:** la skill de dominio realiza el trabajo y el verificador contrasta los resultados con evidencia. `workflow-automation-architect` interviene solo cuando hay un proceso estable y delimitado que conviene automatizar.
+6. **Transferir — `context-handoff-manager`:** prepara un traspaso cuando se cambia de chat/sesión o se solicita continuidad.
+
+### Reglas de coordinación
+
+- Ruta normal: interpretación → coordinación si hace falta → especialista(s) → verificación.
+- Optimización, gestión de riesgos y traspaso se incorporan según el contexto; no son pasos obligatorios en todos los pedidos.
+- Evitar preguntas repetidas si la respuesta ya está disponible y sigue vigente.
+- El orquestador coordina; no duplica el trabajo de las skills especialistas.
+- Leer un archivo de skill no demuestra que una plataforma la haya invocado automáticamente.
+- La coordinación no amplía permisos ni sustituye la aprobación explícita del usuario.
 
 ## Compatibilidad y seguridad
-Markdown compartido no implica compatibilidad operativa idéntica. Registra por separado acceso al contenido, aplicación de instrucciones, herramientas disponibles y ejecución verificada. No publiques, despliegues, gastes dinero, fusiones, borres ni cierres recursos sin autorización explícita. No afirmes pruebas funcionales sin evidencia de ejecución real.
 
-## Documentación
+El formato Markdown compartido no garantiza compatibilidad operativa idéntica. Para cada plataforma se deben registrar por separado:
+
+- Acceso al contenido de la skill.
+- Aplicación efectiva de sus instrucciones.
+- Herramientas y permisos disponibles.
+- Ejecución real y evidencia verificable.
+
+No publicar, desplegar, gastar dinero, fusionar, borrar ni cerrar recursos sin autorización explícita. No introducir secretos ni datos personales en casos de prueba. No declarar una prueba funcional VERDE sin evidencia observable.
+
+## Documentación y mantenimiento
+
+- [Instrucciones universales](docs/instrucciones-universales.md)
 - [Registro de lecciones](tasks/lessons.md)
 - [Plan de trabajo](tasks/todo.md)
 - [Protocolo de compatibilidad](docs/compatibilidad.md)
-- [Pruebas funcionales](tests/README.md)
+- [Protocolo de pruebas funcionales](tests/README.md)
+- [Matriz de cobertura y resultados](tests/RESULTS.md)
 
-## Pruebas funcionales
-La matriz contempla 18 skills en cinco plataformas: 90 combinaciones y 180 ejecuciones mínimas (caso principal y adversarial). Todas permanecen PENDIENTES hasta disponer de evidencia real. CI estática no demuestra compatibilidad funcional.
+## Alcance de las pruebas funcionales
 
-## Estado del proyecto
-Los cambios están en la rama `feat/intuitive-project-workflow` y el PR #5. Consulta el PR y la CI antes de considerar los cambios integrados.
+La matriz contempla **18 skills × 5 plataformas = 90 combinaciones** y **180 ejecuciones mínimas**: un caso principal y uno adversarial por combinación.
+
+Plataformas contempladas: Claude Code, Claude web/app, ChatGPT (Proyecto), Gemini y Kimi.
+
+Todas las ejecuciones permanecen **PENDIENTES** hasta que se realicen y documenten con plataforma/producto/modo, versión/modelo, referencia o SHA de la skill, método de carga, entrada exacta, salida observada y evidencia. La CI estática valida estructura y documentación; no demuestra compatibilidad funcional ni coordinación real entre plataformas.
+
+## Estado del repositorio
+
+- Las seis propuestas de flujo están integradas en `main` mediante el PR [#5](https://github.com/BetOarg/Mis-skills-2/pull/5).
+- Commit de integración: `825a55f28c51562e03a0bd1c85c2be5a3ada677e`.
+- La validación estática de la rama, ejecución [#90](https://github.com/BetOarg/Mis-skills-2/actions/runs/40976946943), terminó correctamente. La validación posterior a la fusión debe comprobarse por separado.
+- Las 180 ejecuciones funcionales siguen PENDIENTES; no se declara compatibilidad completa.
 
 ## Estados
-- VERDE: criterios ejecutados y aprobados con evidencia.
-- ROJO: falló un criterio obligatorio.
-- PENDIENTE: falta ejecutar o falta evidencia.
-- BLOQUEADO: falta acceso, información, herramienta o autorización.
+
+- **VERDE:** criterios ejecutados y aprobados con evidencia.
+- **ROJO:** falló un criterio obligatorio.
+- **PENDIENTE:** falta ejecutar o falta evidencia.
+- **BLOQUEADO:** falta acceso, información, herramienta o autorización.
