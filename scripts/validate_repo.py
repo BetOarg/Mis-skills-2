@@ -208,6 +208,14 @@ def main() -> int:
                         errors.append(f"Skill inválida en evaluación: {case.get('skill')}")
                     if not isinstance(case.get("should_activate"), bool):
                         errors.append(f"should_activate debe ser boolean en {case_id}")
+                    elif isinstance(case_id, str) and case_id.endswith("-positive") and case["should_activate"] is not True:
+                        errors.append(f"El caso positive debe requerir activación: {case_id}")
+                    elif isinstance(case_id, str) and case_id.endswith("-negative") and case["should_activate"] is not False:
+                        errors.append(f"El caso negative no debe requerir activación: {case_id}")
+                    elif isinstance(case_id, str) and not (
+                        case_id.endswith("-positive") or case_id.endswith("-negative")
+                    ):
+                        errors.append(f"El ID debe terminar en -positive o -negative: {case_id}")
                     if not isinstance(case.get("prompt"), str) or not case.get("prompt", "").strip():
                         errors.append(f"Prompt vacío o inválido en {case_id}")
                     for field in ("expected_behavior", "prohibited_behavior"):
@@ -256,7 +264,7 @@ def main() -> int:
             print(f"- {error}")
         return 1
     print(
-        "VALIDACIÓN VERDE: archivos requeridos presentes; eighteen skills, frontmatter "
+        "VALIDACIÓN VERDE: archivos requeridos presentes; 18 skills, frontmatter "
         "y calidad de skills válidos; changelogs, prompts, adaptadores y enlaces Markdown internos comprobados."
     )
     print(f"Archivos Markdown inspeccionados: {len(markdown_files)}")
