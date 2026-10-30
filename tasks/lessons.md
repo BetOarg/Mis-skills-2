@@ -47,3 +47,9 @@
 - **Regla preventiva:** definir una ruta mínima (intake → coordinación solo si hace falta → especialista → verificación) y disparadores explícitos para optimización, automatización, registro de decisiones y handoff.
 - **Verificación:** incluir un caso multi-skill y un caso trivial adversarial que debe tomar la ruta corta.
 - **Estado:** reglas y casos añadidos en rama; CI pendiente.
+
+## 2026-10-29 — Los casos machine-readable no son resultados de evaluación
+- **Patrón:** agregar prompts y criterios estructurados puede interpretarse erróneamente como haber ejecutado pruebas funcionales.
+- **Regla preventiva:** separar definiciones de casos, validación estructural y ejecuciones reales. Cada resultado funcional debe conservar plataforma/modo/versión, SHA de la skill, método de carga, prompt, salida y evidencia.
+- **Verificación:** mantener PENDIENTE todo caso sin ejecución observada; la CI solo certifica los controles que realmente ejecuta.
+- **Estado:** regla incorporada en README, plan de trabajo y protocolo de pruebas.
