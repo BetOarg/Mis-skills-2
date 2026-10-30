@@ -17,6 +17,9 @@
 - [x] Revisar las seis fuentes solicitadas y corregir la referencia OpenAI: `openai/skills` está deprecated; `openai/plugins` contiene ejemplos actuales de Codex.
 - [x] Preparar mejoras para cinco skills prioritarias y sus changelogs.
 - [x] Añadir 10 casos piloto machine-readable y validación estructural en CI.
+- [x] Revisar y fusionar el PR #6 en `main` mediante squash.
+- [x] Verificar CI de la PR #6: ejecución #125, SUCCESS.
+- [x] Verificar CI posterior a la fusión: ejecución #126, SUCCESS, commit `0e23dd3accb520fd4bef8b8dbd37fa31812b6a04`.
 - [ ] Ejecutar los 10 casos piloto en plataformas reales y registrar evidencia; `evaluations.json` contiene definiciones, no resultados.
 - [ ] Revisar el riesgo de `main` sin protección y decidir política de protección en una tarea separada.
 
