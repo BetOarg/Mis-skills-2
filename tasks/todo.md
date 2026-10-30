@@ -12,7 +12,7 @@
 - [x] Verificar CI posterior a la fusión: ejecución #92, SUCCESS, commit `825a55f28c51562e03a0bd1c85c2be5a3ada677e`.
 - [x] Verificar CI del último commit documental en `main`: ejecución #97, SUCCESS, SHA `78c2c91d3a763412dd1cd2748d6142be4dddb8fe`.
 
-## Validación funcional multiplataforma
+## Auditoría comparativa de referencias — octubre de 2026\n\n- [x] Revisar las seis fuentes solicitadas y corregir la referencia OpenAI: \\`openai/skills\\` está deprecated; \\`openai/plugins\\` contiene ejemplos actuales de Codex.\n- [x] Preparar mejoras para cinco skills prioritarias y sus changelogs.\n- [x] Añadir 10 casos piloto machine-readable y validación estructural en CI.\n- [ ] Ejecutar los 10 casos piloto en plataformas reales y registrar evidencia; no confundir con las 180 pruebas completas.\n- [ ] Revisar el riesgo de \\`main\\` sin protección y decidir política de protección en una tarea separada.\n\n## Validación funcional multiplataforma
 
 - [ ] Ejecutar las 180 pruebas: 18 skills × 5 plataformas × 2 casos (principal y adversarial).
 - [ ] Registrar para cada ejecución plataforma, producto/modo, versión/modelo, SHA de la skill, método de carga, entrada exacta, salida observada y evidencia.
