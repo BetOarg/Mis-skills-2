@@ -92,8 +92,8 @@ Todas las ejecuciones permanecen **PENDIENTES** hasta que se realicen y document
 
 - Las seis propuestas de flujo están integradas en `main` mediante el PR [#5](https://github.com/BetOarg/Mis-skills-2/pull/5).
 - Commit de integración: `825a55f28c51562e03a0bd1c85c2be5a3ada677e`.
-- La validación estática de la rama, ejecución [#90](https://github.com/BetOarg/Mis-skills-2/actions/runs/40976946943), terminó correctamente. La validación posterior a la fusión debe comprobarse por separado.
-- Las 180 ejecuciones funcionales siguen PENDIENTES; no se declara compatibilidad completa.
+- CI posterior a la fusión: ejecución [#92](https://github.com/BetOarg/Mis-skills-2/actions/runs/40984064962), **SUCCESS** sobre el commit de integración.
+- La validación estática confirma estructura y documentación; las 180 ejecuciones funcionales siguen PENDIENTES.
 
 ## Estados
 
